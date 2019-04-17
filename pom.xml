@@ -16,7 +16,7 @@
 		<project.target>${project.basedir}/target</project.target>
 		<project.config.source.main.resources.include>**/**</project.config.source.main.resources.include>
 		<project.config.source.main.resources.exclude>zzz</project.config.source.main.resources.exclude>
-		<project.config.infra.phase>none</project.config.infra.phase>
+		<project.config.infrastructure.phase>none</project.config.infrastructure.phase>
 		<project.config.spring.aop.phase>none</project.config.spring.aop.phase>
 		<project.config.process.annotations.phase>generate-sources</project.config.process.annotations.phase>
 		<project.config.process.test.annotations.phase>generate-test-sources</project.config.process.test.annotations.phase>
@@ -31,6 +31,8 @@
 		<project.config.spring.aop.args>-javaagent:${project.target}/aspectjweaver.jar
 			-javaagent:${project.target}/spring-instrument.jar</project.config.spring.aop.args>
 		<project.config.spring.test.args>${project.config.spring.aop.args}</project.config.spring.test.args>
+		<project.config.assembly.phase>none</project.config.assembly.phase>
+		<project.config.assembly.descriptors></project.config.assembly.descriptors>
 		<project.config.source.main.package.include>**/**</project.config.source.main.package.include>
 		<project.config.source.main.package.exclude>zzz</project.config.source.main.package.exclude>
 		<project.config.attach.sources.phase>package</project.config.attach.sources.phase>
@@ -38,7 +40,7 @@
 		<project.config.spring.boot.package.phase>none</project.config.spring.boot.package.phase>
 		<project.config.spring.boot.package.args>${project.config.spring.aop.args}</project.config.spring.boot.package.args>
 
-		<java.version>10</java.version>
+		<java.version>11</java.version>
 		<jackson.version>2.9.8</jackson.version>
 		<slf4j.version>1.7.25</slf4j.version>
 		<apache.commons.version>3.8.1</apache.commons.version>
@@ -147,15 +149,15 @@
 				<version>3.1.0</version>
 				<executions>
 					<execution>
-						<phase>${project.config.infra.phase}</phase>
+						<phase>${project.config.infrastructure.phase}</phase>
 						<goals>
 							<goal>copy-resources</goal>
 						</goals>
 						<configuration>
-							<outputDirectory>${project.build.directory}/infra</outputDirectory>
+							<outputDirectory>${project.build.directory}/infrastructure</outputDirectory>
 							<resources>
 								<resource>
-									<directory>src/infra</directory>
+									<directory>src/infrastructure</directory>
 									<filtering>false</filtering>
 								</resource>
 							</resources>
@@ -186,6 +188,11 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.0</version>
+
+				<configuration>
+					<release>${java.version}</release>
+					<forceJavacCompilerUse>true</forceJavacCompilerUse>
+				</configuration>
 
 				<executions>
 
@@ -264,10 +271,6 @@
 
 				</executions>
 
-				<configuration>
-					<release>${java.version}</release>
-				</configuration>
-
 				<dependencies>
 					<dependency>
 						<groupId>org.ow2.asm</groupId>
@@ -291,6 +294,11 @@
 					</excludes>
 				</configuration>
 			</plugin>
+
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-assembly-plugin</artifactId> 
+				<executions> <execution> <phase>${project.config.assembly.phase}</phase> 
+				<goals> <goal>single</goal> </goals> <configuration> <descriptors>${project.config.assembly.descriptors}</descriptors> 
+				</configuration> </execution> </executions> </plugin> -->
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
