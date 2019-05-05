@@ -5,7 +5,7 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.coldis</groupId>
-	<artifactId>common-config</artifactId>
+	<artifactId>configuration</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
@@ -56,9 +56,9 @@
 	</properties>
 
 	<scm>
-		<url>https://github.com/coldis-org/common-config</url>
-		<connection>scm:git:https://github.com/coldis-org/common-config.git</connection>
-		<developerConnection>scm:git:git@github.com:coldis-org/common-config.git</developerConnection>
+		<url>https://github.com/coldis-org/configuration</url>
+		<connection>scm:git:https://github.com/coldis-org/configuration.git</connection>
+		<developerConnection>scm:git:git@github.com:coldis-org/configuration.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
 
@@ -204,7 +204,6 @@
 						</goals>
 						<configuration>
 							<proc>only</proc>
-							<generatedSourcesDirectory>${project.basedir}/src/main/java</generatedSourcesDirectory>
 							<failOnError>false</failOnError>
 							<includes>
 								<include>${project.config.source.main.compile.include}</include>
@@ -224,7 +223,6 @@
 						</goals>
 						<configuration>
 							<proc>only</proc>
-							<generatedTestSourcesDirectory>${project.basedir}/src/test/java</generatedTestSourcesDirectory>
 							<failOnError>false</failOnError>
 							<debug>true</debug>
 							<testIncludes>
