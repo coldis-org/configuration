@@ -39,6 +39,17 @@
 		<project.config.attach.javadocs.phase>package</project.config.attach.javadocs.phase>
 		<project.config.spring.boot.package.phase>none</project.config.spring.boot.package.phase>
 		<project.config.spring.boot.package.args>${project.config.spring.aop.args}</project.config.spring.boot.package.args>
+		<project.config.release.private>false</project.config.release.private>
+		<project.config.release.gpg.passphrase></project.config.release.gpg.passphrase>
+
+		<project.config.repository.private>coldis-private-software-repository</project.config.repository.private>
+		<project.config.repository.private.snapshot.url>http://software-repository.infrastructure.coldis.org/repository/maven-snapshots</project.config.repository.private.snapshot.url>
+		<project.config.repository.private.release.url>http://software-repository.infrastructure.coldis.org/repository/maven-releases</project.config.repository.private.release.url>
+		<project.config.repository.public>coldis-public-software-repository</project.config.repository.public>
+		<project.config.repository.public.snapshot.url>https://oss.sonatype.org/content/repositories/snapshots</project.config.repository.public.snapshot.url>
+		<project.config.repository.public.release.url>https://oss.sonatype.org/service/local/staging/deploy/maven2</project.config.repository.public.release.url>
+
+
 
 		<java.version>11</java.version>
 		<jackson.version>2.9.8</jackson.version>
@@ -112,17 +123,6 @@
 	<dependencies>
 
 	</dependencies>
-
-	<distributionManagement>
-		<snapshotRepository>
-			<id>nexus</id>
-			<url>http://asset.tech.coldis.org/repository/maven-snapshots/</url>
-		</snapshotRepository>
-		<repository>
-			<id>nexus</id>
-			<url>http://asset.tech.coldis.org/repository/maven-releases/</url>
-		</repository>
-	</distributionManagement>
 
 	<build>
 
@@ -293,10 +293,19 @@
 				</configuration>
 			</plugin>
 
-			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-assembly-plugin</artifactId> 
-				<executions> <execution> <phase>${project.config.assembly.phase}</phase> 
-				<goals> <goal>single</goal> </goals> <configuration> <descriptors>${project.config.assembly.descriptors}</descriptors> 
-				</configuration> </execution> </executions> </plugin> -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<version>3.1.1</version>
+				<executions>
+					<execution>
+						<phase>${project.config.assembly.phase}</phase>
+						<goals>
+							<goal>single</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -384,8 +393,101 @@
 				</configuration>
 			</plugin>
 
+			<plugin>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.8.2</version>
+				<executions>
+					<execution>
+						<id>default-deploy</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.5.3</version>
+				<configuration>
+					<localCheckout>true</localCheckout>
+					<arguments>-Dgpg.passphrase=${project.config.release.gpg.passphrase}</arguments>
+				</configuration>
+			</plugin>
+
 		</plugins>
 
 	</build>
+
+	<profiles>
+		<profile>
+			<id>maven-central</id>
+			<activation>
+				<property>
+					<name>project.config.release.private</name>
+					<value>false</value>
+				</property>
+			</activation>
+			<distributionManagement>
+				<snapshotRepository>
+					<id>${project.config.repository.public}</id>
+					<url>${project.config.repository.private.release.url}</url>
+				</snapshotRepository>
+				<repository>
+					<id>${project.config.repository.public}</id>
+					<url>${project.config.repository.public.release.url}</url>
+				</repository>
+			</distributionManagement>
+		</profile>
+		<profile>
+			<id>maven-private</id>
+			<activation>
+				<property>
+					<name>project.config.release.private</name>
+					<value>true</value>
+				</property>
+			</activation>
+			<distributionManagement>
+				<snapshotRepository>
+					<id>${project.config.repository.private}</id>
+					<url>${project.config.repository.private.snapshot.url}</url>
+				</snapshotRepository>
+				<repository>
+					<id>${project.config.repository.private}</id>
+					<url>${project.config.repository.private.release.url}</url>
+				</repository>
+			</distributionManagement>
+		</profile>
+		<profile>
+			<id>release</id>
+			<activation>
+				<property>
+					<name>performRelease</name>
+					<value>true</value>
+				</property>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.6</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+	</profiles>
 
 </project>
