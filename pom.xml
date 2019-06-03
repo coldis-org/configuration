@@ -1,10 +1,12 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.coldis</groupId>
 	<artifactId>configuration</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Common configuration</name>
@@ -20,17 +22,17 @@
 		<project.config.process.test.annotations.phase>generate-test-sources</project.config.process.test.annotations.phase>
 		<project.config.source.main.compile.include>**/*.java</project.config.source.main.compile.include>
 		<project.config.source.main.compile.exclude>zzz</project.config.source.main.compile.exclude>
-		<project.config.source.main.compile.annotationProcessors />
+		<project.config.source.main.compile.annotationProcessors></project.config.source.main.compile.annotationProcessors>
 		<project.config.source.test.compile.include>**/*.java</project.config.source.test.compile.include>
 		<project.config.source.test.compile.exclude>zzz</project.config.source.test.compile.exclude>
-		<project.config.source.test.compile.annotationProcessors />
+		<project.config.source.test.compile.annotationProcessors></project.config.source.test.compile.annotationProcessors>
 		<project.config.jacoco.prepare>none</project.config.jacoco.prepare>
 		<project.config.jacoco.report>none</project.config.jacoco.report>
 		<project.config.spring.aop.args>-javaagent:${project.target}/aspectjweaver.jar
 			-javaagent:${project.target}/spring-instrument.jar</project.config.spring.aop.args>
 		<project.config.spring.test.args>${project.config.spring.aop.args}</project.config.spring.test.args>
 		<project.config.assembly.phase>none</project.config.assembly.phase>
-		<project.config.assembly.descriptors />
+		<project.config.assembly.descriptors></project.config.assembly.descriptors>
 		<project.config.source.main.package.include>**/**</project.config.source.main.package.include>
 		<project.config.source.main.package.exclude>zzz</project.config.source.main.package.exclude>
 		<project.config.attach.sources.phase>package</project.config.attach.sources.phase>
@@ -38,7 +40,7 @@
 		<project.config.spring.boot.package.phase>none</project.config.spring.boot.package.phase>
 		<project.config.spring.boot.package.args>${project.config.spring.aop.args}</project.config.spring.boot.package.args>
 		<project.config.release.private>false</project.config.release.private>
-		<project.config.release.gpg.passphrase />
+		<project.config.release.gpg.passphrase></project.config.release.gpg.passphrase>
 
 		<project.config.repository.private>coldis-private-software-repository</project.config.repository.private>
 		<project.config.repository.private.snapshot.url>http://software-repository.infrastructure.coldis.org/repository/maven-snapshots</project.config.repository.private.snapshot.url>
