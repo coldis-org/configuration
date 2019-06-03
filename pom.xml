@@ -39,7 +39,6 @@
 		<project.config.attach.javadocs.phase>package</project.config.attach.javadocs.phase>
 		<project.config.spring.boot.package.phase>none</project.config.spring.boot.package.phase>
 		<project.config.spring.boot.package.args>${project.config.spring.aop.args}</project.config.spring.boot.package.args>
-		<project.config.release.private>false</project.config.release.private>
 		<project.config.release.gpg.passphrase></project.config.release.gpg.passphrase>
 
 		<project.config.repository.private>coldis-private-software-repository</project.config.repository.private>
@@ -72,6 +71,17 @@
 		<developerConnection>scm:git:git@github.com:coldis-org/configuration.git</developerConnection>
 		<tag>HEAD</tag>
 	</scm>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>${project.config.repository.public}</id>
+			<url>${project.config.repository.private.release.url}</url>
+		</snapshotRepository>
+		<repository>
+			<id>${project.config.repository.public}</id>
+			<url>${project.config.repository.public.release.url}</url>
+		</repository>
+	</distributionManagement>
 
 	<dependencyManagement>
 		<dependencies>
@@ -442,44 +452,7 @@
 	</build>
 
 	<profiles>
-		<profile>
-			<id>maven-central</id>
-			<activation>
-				<property>
-					<name>project.config.release.private</name>
-					<value>false</value>
-				</property>
-			</activation>
-			<distributionManagement>
-				<snapshotRepository>
-					<id>${project.config.repository.public}</id>
-					<url>${project.config.repository.private.release.url}</url>
-				</snapshotRepository>
-				<repository>
-					<id>${project.config.repository.public}</id>
-					<url>${project.config.repository.public.release.url}</url>
-				</repository>
-			</distributionManagement>
-		</profile>
-		<profile>
-			<id>maven-private</id>
-			<activation>
-				<property>
-					<name>project.config.release.private</name>
-					<value>true</value>
-				</property>
-			</activation>
-			<distributionManagement>
-				<snapshotRepository>
-					<id>${project.config.repository.private}</id>
-					<url>${project.config.repository.private.snapshot.url}</url>
-				</snapshotRepository>
-				<repository>
-					<id>${project.config.repository.private}</id>
-					<url>${project.config.repository.private.release.url}</url>
-				</repository>
-			</distributionManagement>
-		</profile>
+
 		<profile>
 			<id>release</id>
 			<activation>
