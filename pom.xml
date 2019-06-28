@@ -10,6 +10,13 @@
 	<packaging>pom</packaging>
 
 	<name>Common configuration</name>
+	<description>Common configuration and dependencies.</description>
+	<url>http://coldis.org/project/configuration</url>
+	<developers>
+		<developer>
+			<email>me@rvcoutinho.com</email>
+		</developer>
+	</developers>
 
 	<properties>
 
