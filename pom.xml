@@ -47,6 +47,7 @@
 		<project.config.repository.public>coldis-public-software-repository</project.config.repository.public>
 		<project.config.repository.public.snapshot.url>https://oss.sonatype.org/content/repositories/snapshots</project.config.repository.public.snapshot.url>
 		<project.config.repository.public.release.url>https://oss.sonatype.org/service/local/staging/deploy/maven2</project.config.repository.public.release.url>
+		<project.config.repository.public.repository.url>https://oss.sonatype.org/</project.config.repository.public.repository.url>
 		<project.config.repository.oss.phase>deploy</project.config.repository.oss.phase>
 
 
@@ -491,8 +492,8 @@
 					</execution>
 				</executions>
 				<configuration>
-					<serverId>ossrh</serverId>
-					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
+					<serverId>${project.config.repository.public}</serverId>
+					<nexusUrl>${project.config.repository.public.repository.url}</nexusUrl>
 					<autoReleaseAfterClose>true</autoReleaseAfterClose>
 				</configuration>
 			</plugin>
