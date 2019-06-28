@@ -12,6 +12,11 @@
 	<name>Common configuration</name>
 	<description>Common configuration and dependencies.</description>
 	<url>http://coldis.org/project/configuration</url>
+	<licenses>
+		<license>
+			<name>GPL</name>
+		</license>
+	</licenses>
 	<developers>
 		<developer>
 			<email>me@rvcoutinho.com</email>
