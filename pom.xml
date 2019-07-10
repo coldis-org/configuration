@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
@@ -26,7 +28,6 @@
 		<project.target>${project.basedir}/target</project.target>
 		<project.config.source.main.resources.include>**/**</project.config.source.main.resources.include>
 		<project.config.source.main.resources.exclude>zzz</project.config.source.main.resources.exclude>
-		<project.config.infrastructure.phase>none</project.config.infrastructure.phase>
 		<project.config.spring.aop.phase>none</project.config.spring.aop.phase>
 		<project.config.process.annotations.phase>generate-sources</project.config.process.annotations.phase>
 		<project.config.process.test.annotations.phase>generate-test-sources</project.config.process.test.annotations.phase>
@@ -49,6 +50,7 @@
 		<project.config.attach.javadocs.phase>package</project.config.attach.javadocs.phase>
 		<project.config.spring.boot.package.phase>none</project.config.spring.boot.package.phase>
 		<project.config.spring.boot.package.args>${project.config.spring.aop.args}</project.config.spring.boot.package.args>
+		<project.config.spring.boot.package.main></project.config.spring.boot.package.main>
 		<project.config.release.gpg.passphrase />
 
 		<project.config.repository.private>coldis-private-software-repository</project.config.repository.private>
@@ -72,9 +74,11 @@
 		<apache.collections.version>4.3</apache.collections.version>
 		<apache.text.version>1.6</apache.text.version>
 		<apache.io.version>2.6</apache.io.version>
+		<velocity.version>1.7</velocity.version>
 		<itext.version>5.5.13.1</itext.version>
 		<javax-persistence.version>2.2</javax-persistence.version>
 		<jpa>2.2</jpa>
+		<springfox.swagger.version>2.9.2</springfox.swagger.version>
 
 	</properties>
 
@@ -110,7 +114,7 @@
 			<dependency>
 				<groupId>org.apache.velocity</groupId>
 				<artifactId>velocity</artifactId>
-				<version>1.7</version>
+				<version>${velocity.version}</version>
 			</dependency>
 
 			<dependency>
@@ -145,6 +149,12 @@
 				<version>${itext.version}</version>
 			</dependency>
 
+			<dependency>
+				<groupId>io.springfox</groupId>
+				<artifactId>springfox-swagger-ui</artifactId>
+				<version>${springfox.swagger.version}</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 
@@ -171,28 +181,6 @@
 		</resources>
 
 		<plugins>
-
-			<plugin>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>3.1.0</version>
-				<executions>
-					<execution>
-						<phase>${project.config.infrastructure.phase}</phase>
-						<goals>
-							<goal>copy-resources</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${project.build.directory}/infrastructure</outputDirectory>
-							<resources>
-								<resource>
-									<directory>src/infrastructure</directory>
-									<filtering>false</filtering>
-								</resource>
-							</resources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -455,6 +443,7 @@
 							<goal>repackage</goal>
 						</goals>
 						<configuration>
+							<mainClass>${project.config.spring.boot.package.main}</mainClass>
 							<jvmArguments>${project.config.spring.boot.package.args}</jvmArguments>
 						</configuration>
 					</execution>
