@@ -443,6 +443,7 @@
 						<configuration>
 							<mainClass>${project.config.spring.boot.package.main}</mainClass>
 							<jvmArguments>${project.config.spring.boot.package.args}</jvmArguments>
+							<classifier>run</classifier>
 						</configuration>
 					</execution>
 				</executions>
