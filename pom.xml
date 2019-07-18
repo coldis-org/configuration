@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
@@ -60,8 +62,6 @@
 		<project.config.repository.public.repository.url>https://oss.sonatype.org/</project.config.repository.public.repository.url>
 		<project.config.repository.oss.phase>deploy</project.config.repository.oss.phase>
 
-
-
 		<java.version>11</java.version>
 		<jackson.version>2.9.9</jackson.version>
 		<slf4j.version>1.7.26</slf4j.version>
@@ -78,6 +78,7 @@
 		<itext.version>5.5.13.1</itext.version>
 		<javax-persistence.version>2.2</javax-persistence.version>
 		<jpa>2.2</jpa>
+		<swagger.version>1.5.20</swagger.version>
 		<springfox.swagger.version>2.9.2</springfox.swagger.version>
 
 	</properties>
@@ -158,6 +159,12 @@
 				<groupId>io.springfox</groupId>
 				<artifactId>springfox-swagger-ui</artifactId>
 				<version>${springfox.swagger.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>io.swagger</groupId>
+				<artifactId>swagger-annotations</artifactId>
+				<version>${swagger.version}</version>
 			</dependency>
 
 		</dependencies>
