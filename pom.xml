@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
@@ -35,6 +37,9 @@
 		<project.config.source.test.compile.include>**/*.java</project.config.source.test.compile.include>
 		<project.config.source.test.compile.exclude>zzz</project.config.source.test.compile.exclude>
 		<project.config.source.test.compile.annotationProcessors />
+		<project.config.infrastructure.build.phase>none</project.config.infrastructure.build.phase>
+		<project.config.infrastructure.build.path></project.config.infrastructure.build.path>
+		<project.config.infrastructure.push.phase>none</project.config.infrastructure.push.phase>
 		<project.config.jacoco.prepare>none</project.config.jacoco.prepare>
 		<project.config.jacoco.report>none</project.config.jacoco.report>
 		<project.config.spring.aop.args>-javaagent:${project.target}/aspectjweaver.jar
@@ -335,6 +340,43 @@
 						<exclude>${project.config.source.main.package.exclude}</exclude>
 					</excludes>
 				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<version>1.6.0</version>
+				<executions>
+					<execution>
+						<id>Docker build</id>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<phase>${project.config.infrastructure.build.phase}</phase>
+						<configuration>
+							<executable>operational_utils_docker_build_modules</executable>
+							<arguments>
+								<argument>-d</argument>
+								<argument>${project.config.infrastructure.build.path}</argument>
+							</arguments>
+						</configuration>
+					</execution>
+					<execution>
+						<id>Docker push</id>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<phase>${project.config.infrastructure.push.phase}</phase>
+						<configuration>
+							<executable>operational_utils_docker_build_modules</executable>
+							<arguments>
+								<argument>--push</argument>
+								<argument>-d</argument>
+								<argument>${project.config.infrastructure.build.path}</argument>
+							</arguments>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 
 			<plugin>
