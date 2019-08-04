@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
@@ -35,14 +37,15 @@
 		<project.config.source.test.compile.include>**/*.java</project.config.source.test.compile.include>
 		<project.config.source.test.compile.exclude>zzz</project.config.source.test.compile.exclude>
 		<project.config.source.test.compile.annotationProcessors />
-		<project.config.infrastructure.build.phase>none</project.config.infrastructure.build.phase>
 		<project.config.infrastructure.build.path />
-		<project.config.infrastructure.push.phase>none</project.config.infrastructure.push.phase>
+		<project.config.infrastructure.build.phase>none</project.config.infrastructure.build.phase>
+		<project.config.infrastructure.deploy.phase>none</project.config.infrastructure.deploy.phase>
+		<project.config.infrastructure.release.phase>none</project.config.infrastructure.release.phase>
 		<project.config.jacoco.prepare>none</project.config.jacoco.prepare>
 		<project.config.jacoco.report>none</project.config.jacoco.report>
 		<project.config.spring.aop.args>-javaagent:${project.target}/aspectjweaver.jar
 			-javaagent:${project.target}/spring-instrument.jar</project.config.spring.aop.args>
-		<project.config.spring.test.args />
+		<project.config.source.test.args />
 		<project.config.assembly.phase>none</project.config.assembly.phase>
 		<project.config.assembly.descriptors />
 		<project.config.source.main.package.include>**/**</project.config.source.main.package.include>
@@ -346,7 +349,7 @@
 				<version>1.6.0</version>
 				<executions>
 					<execution>
-						<id>Docker build</id>
+						<id>docker-build</id>
 						<goals>
 							<goal>exec</goal>
 						</goals>
@@ -354,23 +357,23 @@
 						<configuration>
 							<executable>operational_utils_docker_build_modules</executable>
 							<arguments>
-								<argument>-d</argument>
+								<argument>--base-directory</argument>
 								<argument>${project.config.infrastructure.build.path}</argument>
 							</arguments>
 						</configuration>
 					</execution>
 					<execution>
-						<id>Docker push</id>
+						<id>docker-push-latest</id>
 						<goals>
 							<goal>exec</goal>
 						</goals>
-						<phase>${project.config.infrastructure.push.phase}</phase>
+						<phase>${project.config.infrastructure.deploy.phase}</phase>
 						<configuration>
 							<executable>operational_utils_docker_build_modules</executable>
 							<arguments>
 								<argument>--push</argument>
-								<argument>-d</argument>
-								<argument>${project.config.infrastructure.build.path}</argument>
+								<argument>--base-directory</argument>
+								<argument>${project.config.infrastructure.deploy.path}</argument>
 							</arguments>
 						</configuration>
 					</execution>
@@ -478,7 +481,7 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.22.1</version>
 				<configuration>
-					<argLine>${project.config.spring.test.args}</argLine>
+					<argLine>${project.config.source.test.args}</argLine>
 					<reuseForks>false</reuseForks>
 				</configuration>
 			</plugin>
@@ -512,6 +515,7 @@
 						<goals>
 							<goal>deploy</goal>
 						</goals>
+						<configuration></configuration>
 					</execution>
 				</executions>
 			</plugin>
@@ -576,6 +580,30 @@
 								<goals>
 									<goal>sign</goal>
 								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>exec-maven-plugin</artifactId>
+						<version>1.6.0</version>
+						<executions>
+							<execution>
+								<id>docker-push-release</id>
+								<goals>
+									<goal>exec</goal>
+								</goals>
+								<phase>${project.config.infrastructure.release.phase}</phase>
+								<configuration>
+									<executable>operational_utils_docker_build_modules</executable>
+									<arguments>
+										<argument>--push</argument>
+										<argument>--base-directory</argument>
+										<argument>${project.config.infrastructure.build.path}</argument>
+										<argument>--version</argument>
+										<argument>${revision}</argument>
+									</arguments>
+								</configuration>
 							</execution>
 						</executions>
 					</plugin>
