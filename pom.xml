@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
@@ -37,7 +39,9 @@
 		<project.config.source.test.compile.annotationProcessors />
 		<project.config.infrastructure.build.path />
 		<project.config.infrastructure.build.phase>none</project.config.infrastructure.build.phase>
+		<project.config.infrastructure.deploy.path>${project.config.infrastructure.build.path}</project.config.infrastructure.deploy.path>
 		<project.config.infrastructure.deploy.phase>none</project.config.infrastructure.deploy.phase>
+		<project.config.infrastructure.release.path>${project.config.infrastructure.build.path}</project.config.infrastructure.release.path>
 		<project.config.infrastructure.release.phase>none</project.config.infrastructure.release.phase>
 		<project.config.jacoco.prepare>none</project.config.jacoco.prepare>
 		<project.config.jacoco.report>none</project.config.jacoco.report>
@@ -597,7 +601,7 @@
 									<arguments>
 										<argument>--push</argument>
 										<argument>--base-directory</argument>
-										<argument>${project.config.infrastructure.build.path}</argument>
+										<argument>${project.config.infrastructure.release.path}</argument>
 										<argument>--version</argument>
 										<argument>${revision}</argument>
 									</arguments>
