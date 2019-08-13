@@ -56,6 +56,7 @@
 		<project.config.spring.boot.package.args>${project.config.spring.aop.args}</project.config.spring.boot.package.args>
 		<project.config.spring.boot.package.main />
 		<project.config.release.gpg.passphrase />
+		<project.config.release.gpg.phase>verify</project.config.release.gpg.phase>
 
 		<project.config.repository.private>coldis-private-software-repository</project.config.repository.private>
 		<project.config.repository.private.snapshot.url>http://software-repository.infrastructure.coldis.org/repository/maven-snapshots</project.config.repository.private.snapshot.url>
@@ -576,7 +577,7 @@
 						<executions>
 							<execution>
 								<id>sign-artifacts</id>
-								<phase>verify</phase>
+								<phase>${project.config.release.gpg.phase}</phase>
 								<goals>
 									<goal>sign</goal>
 								</goals>
