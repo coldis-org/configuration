@@ -198,6 +198,7 @@
 				<directory>${project.basedir}</directory>
 				<includes>
 					<include>artifact.properties</include>
+					<include>artifact_properties.groovy</include>
 				</includes>
 				<targetPath>${project.target}</targetPath>
 				<filtering>true</filtering>
