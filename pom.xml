@@ -186,13 +186,20 @@
 		<resources>
 
 			<resource>
-				<directory>src/main/resources</directory>
+				<directory>${project.basedir}/src/main/resources</directory>
 				<includes>
 					<include>${project.config.source.main.resources.include}</include>
 				</includes>
 				<excludes>
 					<exclude>${project.config.source.main.resources.exclude}</exclude>
 				</excludes>
+			</resource>
+			<resource>
+				<directory>${project.basedir}</directory>
+				<includes>
+					<include>artifact.properties</include>
+				</includes>
+				<targetPath>${project.target}</targetPath>
 			</resource>
 
 		</resources>
