@@ -536,8 +536,8 @@
 				<version>2.5.3</version>
 				<configuration>
 					<localCheckout>true</localCheckout>
-					<arguments>-Dgpg.passphrase=${project.config.release.gpg.passphrase}</arguments>
-					<goals>deploy -Dmaven.test.skip=true</goals>
+					<arguments>-Dgpg.passphrase=${project.config.release.gpg.passphrase} -DskipTests -Dmaven.test.skipTests=true -Dmaven.test.skip=true</arguments>
+					<goals>deploy -DskipTests -Dmaven.test.skipTests=true -Dmaven.test.skip=true</goals>
 					<waitBeforeTagging>10</waitBeforeTagging>
 				</configuration>
 			</plugin>
