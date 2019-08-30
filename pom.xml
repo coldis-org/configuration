@@ -4,7 +4,7 @@
 
 	<groupId>org.coldis</groupId>
 	<artifactId>configuration</artifactId>
-	<version>0.0.20-SNAPSHOT</version>
+	<version>0.0.19-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Common configuration</name>
