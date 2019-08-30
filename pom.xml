@@ -1,12 +1,10 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.coldis</groupId>
 	<artifactId>configuration</artifactId>
-	<version>0.0.16-SNAPSHOT</version>
+	<version>0.0.16</version>
 	<packaging>pom</packaging>
 
 	<name>Common configuration</name>
@@ -58,7 +56,7 @@
 		<project.config.attach.sources.phase>package</project.config.attach.sources.phase>
 		<project.config.attach.javadocs.phase>package</project.config.attach.javadocs.phase>
 		<project.config.spring.boot.package.phase>none</project.config.spring.boot.package.phase>
-		<project.config.spring.boot.package.args></project.config.spring.boot.package.args>
+		<project.config.spring.boot.package.args />
 		<project.config.spring.boot.package.main />
 		<project.config.release.gpg.passphrase />
 		<project.config.release.gpg.phase>verify</project.config.release.gpg.phase>
@@ -98,7 +96,7 @@
 		<url>https://github.com/coldis-org/configuration</url>
 		<connection>scm:git:https://github.com/coldis-org/configuration.git</connection>
 		<developerConnection>scm:git:git@github.com:coldis-org/configuration.git</developerConnection>
-		<tag>HEAD</tag>
+		<tag>configuration-0.0.16</tag>
 	</scm>
 
 	<distributionManagement>
