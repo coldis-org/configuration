@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
@@ -32,9 +34,11 @@
 		<project.config.source.main.compile.include>**/*.java</project.config.source.main.compile.include>
 		<project.config.source.main.compile.exclude>zzz</project.config.source.main.compile.exclude>
 		<project.config.source.main.compile.annotationProcessors />
+		<project.config.source.main.aspect.phase>testCompile</project.config.source.main.aspect.phase>
 		<project.config.source.test.compile.include>**/*.java</project.config.source.test.compile.include>
 		<project.config.source.test.compile.exclude>zzz</project.config.source.test.compile.exclude>
 		<project.config.source.test.compile.annotationProcessors />
+		<project.config.source.test.aspect.phase>test-compile</project.config.source.test.aspect.phase>
 		<project.config.infrastructure.build.path />
 		<project.config.infrastructure.build.phase>none</project.config.infrastructure.build.phase>
 		<project.config.infrastructure.deploy.path>${project.config.infrastructure.build.path}</project.config.infrastructure.deploy.path>
@@ -43,8 +47,9 @@
 		<project.config.infrastructure.release.phase>none</project.config.infrastructure.release.phase>
 		<project.config.jacoco.prepare>none</project.config.jacoco.prepare>
 		<project.config.jacoco.report>none</project.config.jacoco.report>
-		<project.config.spring.aop.args>-javaagent:${project.target}/aspectjweaver.jar
-			-javaagent:${project.target}/spring-instrument.jar</project.config.spring.aop.args>
+		<project.config.spring.aspect.ltw.phase>none</project.config.spring.aspect.ltw.phase>
+		<project.config.spring.aspect.ltw.args>-javaagent:${project.target}/aspectjweaver.jar
+			-javaagent:${project.target}/spring-instrument.jar</project.config.spring.aspect.ltw.args>
 		<project.config.source.test.args />
 		<project.config.assembly.phase>none</project.config.assembly.phase>
 		<project.config.assembly.descriptors />
@@ -53,7 +58,7 @@
 		<project.config.attach.sources.phase>package</project.config.attach.sources.phase>
 		<project.config.attach.javadocs.phase>package</project.config.attach.javadocs.phase>
 		<project.config.spring.boot.package.phase>none</project.config.spring.boot.package.phase>
-		<project.config.spring.boot.package.args>${project.config.spring.aop.args}</project.config.spring.boot.package.args>
+		<project.config.spring.boot.package.args></project.config.spring.boot.package.args>
 		<project.config.spring.boot.package.main />
 		<project.config.release.gpg.passphrase />
 		<project.config.release.gpg.phase>verify</project.config.release.gpg.phase>
@@ -70,6 +75,7 @@
 		<java.version>11</java.version>
 		<jackson.version>2.9.9</jackson.version>
 		<slf4j.version>1.7.26</slf4j.version>
+		<aspectj.tools.version>1.9.4</aspectj.tools.version>
 		<apache.commons.version>3.8.1</apache.commons.version>
 		<junit.version>4.12</junit.version>
 		<junit-jupiter.version>5.4.2</junit-jupiter.version>
@@ -214,7 +220,7 @@
 				<version>3.1.1</version>
 				<executions>
 					<execution>
-						<phase>${project.config.spring.aop.phase}</phase>
+						<phase>${project.config.spring.aspect.ltw.phase}</phase>
 						<goals>
 							<goal>copy</goal>
 						</goals>
@@ -337,6 +343,40 @@
 					</dependency>
 				</dependencies>
 
+			</plugin>
+
+			<plugin>
+				<groupId>com.github.m50d</groupId>
+				<artifactId>aspectj-maven-plugin</artifactId>
+				<version>1.11.1</version>
+				<configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+					<proc>none</proc>
+					<complianceLevel>${java.version}</complianceLevel>
+					<showWeaveInfo>true</showWeaveInfo>
+				</configuration>
+				<executions>
+					<execution>
+						<id>aspectj-compile</id>
+						<goals>
+							<goal>${project.config.source.main.aspect.phase}</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>aspectj-test-compile</id>
+						<goals>
+							<goal>${project.config.source.test.aspect.phase}</goal>
+						</goals>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>org.aspectj</groupId>
+						<artifactId>aspectjtools</artifactId>
+						<version>${aspectj.tools.version}</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 
 			<plugin>
@@ -536,8 +576,10 @@
 				<version>2.5.3</version>
 				<configuration>
 					<localCheckout>true</localCheckout>
-					<arguments>-Dgpg.passphrase=${project.config.release.gpg.passphrase} -DskipTests -Dmaven.test.skipTests=true -Dmaven.test.skip=true</arguments>
-					<goals>deploy -DskipTests -Dmaven.test.skipTests=true -Dmaven.test.skip=true</goals>
+					<arguments>-Dgpg.passphrase=${project.config.release.gpg.passphrase}
+						-DskipTests -Dmaven.test.skipTests=true -Dmaven.test.skip=true</arguments>
+					<goals>deploy -DskipTests -Dmaven.test.skipTests=true
+						-Dmaven.test.skip=true</goals>
 					<waitBeforeTagging>10</waitBeforeTagging>
 				</configuration>
 			</plugin>
