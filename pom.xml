@@ -34,7 +34,7 @@
 		<project.config.source.main.compile.include>**/*.java</project.config.source.main.compile.include>
 		<project.config.source.main.compile.exclude>zzz</project.config.source.main.compile.exclude>
 		<project.config.source.main.compile.annotationProcessors />
-		<project.config.source.main.aspect.phase>testCompile</project.config.source.main.aspect.phase>
+		<project.config.source.main.aspect.phase>compile</project.config.source.main.aspect.phase>
 		<project.config.source.test.compile.include>**/*.java</project.config.source.test.compile.include>
 		<project.config.source.test.compile.exclude>zzz</project.config.source.test.compile.exclude>
 		<project.config.source.test.compile.annotationProcessors />
