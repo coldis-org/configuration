@@ -89,6 +89,8 @@
 		<jpa>2.2</jpa>
 		<swagger.version>1.5.20</swagger.version>
 		<springfox.swagger.version>2.9.2</springfox.swagger.version>
+		<hikaricp.version>3.3.1</hikaricp.version>
+		
 
 	</properties>
 
