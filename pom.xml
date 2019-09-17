@@ -4,7 +4,7 @@
 
 	<groupId>org.coldis</groupId>
 	<artifactId>configuration</artifactId>
-	<version>0.0.23</version>
+	<version>0.0.24-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Common configuration</name>
@@ -90,7 +90,6 @@
 		<swagger.version>1.5.20</swagger.version>
 		<springfox.swagger.version>2.9.2</springfox.swagger.version>
 		<hikaricp.version>3.3.1</hikaricp.version>
-		
 
 	</properties>
 
@@ -98,7 +97,7 @@
 		<url>https://github.com/coldis-org/configuration</url>
 		<connection>scm:git:https://github.com/coldis-org/configuration.git</connection>
 		<developerConnection>scm:git:git@github.com:coldis-org/configuration.git</developerConnection>
-		<tag>configuration-0.0.23</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<distributionManagement>
