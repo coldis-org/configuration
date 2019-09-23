@@ -77,7 +77,7 @@
 		<apache.commons.version>3.8.1</apache.commons.version>
 		<junit.version>4.12</junit.version>
 		<junit-jupiter.version>5.4.2</junit-jupiter.version>
-		<spring.boot.version>2.1.6.RELEASE</spring.boot.version>
+		<spring.boot.version>2.1.9.RELEASE</spring.boot.version>
 		<spring.boot.oauth.version>2.3.6.RELEASE</spring.boot.oauth.version>
 		<spring.boot.social.version>2.0.3.RELEASE</spring.boot.social.version>
 		<apache.collections.version>4.3</apache.collections.version>
