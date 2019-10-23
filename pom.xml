@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
@@ -37,6 +39,7 @@
 		<project.config.source.test.compile.exclude>zzz</project.config.source.test.compile.exclude>
 		<project.config.source.test.compile.annotationProcessors />
 		<project.config.source.test.aspect.phase>process-test-classes</project.config.source.test.aspect.phase>
+		<project.config.infrastructure.include></project.config.infrastructure.include>
 		<project.config.infrastructure.build.path />
 		<project.config.infrastructure.build.phase>none</project.config.infrastructure.build.phase>
 		<project.config.infrastructure.deploy.path>${project.config.infrastructure.build.path}</project.config.infrastructure.deploy.path>
@@ -430,6 +433,8 @@
 							<arguments>
 								<argument>--base-directory</argument>
 								<argument>${project.config.infrastructure.build.path}</argument>
+								<argument>--include-modules</argument>
+								<argument>${project.config.infrastructure.include}</argument>
 							</arguments>
 						</configuration>
 					</execution>
@@ -445,6 +450,8 @@
 								<argument>--push</argument>
 								<argument>--base-directory</argument>
 								<argument>${project.config.infrastructure.deploy.path}</argument>
+								<argument>--include-modules</argument>
+								<argument>${project.config.infrastructure.include}</argument>
 							</arguments>
 						</configuration>
 					</execution>
