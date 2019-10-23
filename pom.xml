@@ -1,12 +1,10 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.coldis</groupId>
 	<artifactId>configuration</artifactId>
-	<version>0.0.26-SNAPSHOT</version>
+	<version>0.0.26</version>
 	<packaging>pom</packaging>
 
 	<name>Common configuration</name>
@@ -39,7 +37,7 @@
 		<project.config.source.test.compile.exclude>zzz</project.config.source.test.compile.exclude>
 		<project.config.source.test.compile.annotationProcessors />
 		<project.config.source.test.aspect.phase>process-test-classes</project.config.source.test.aspect.phase>
-		<project.config.infrastructure.include></project.config.infrastructure.include>
+		<project.config.infrastructure.include />
 		<project.config.infrastructure.build.path />
 		<project.config.infrastructure.build.phase>none</project.config.infrastructure.build.phase>
 		<project.config.infrastructure.deploy.path>${project.config.infrastructure.build.path}</project.config.infrastructure.deploy.path>
@@ -101,7 +99,7 @@
 		<url>https://github.com/coldis-org/configuration</url>
 		<connection>scm:git:https://github.com/coldis-org/configuration.git</connection>
 		<developerConnection>scm:git:git@github.com:coldis-org/configuration.git</developerConnection>
-		<tag>configuration-0.0.23</tag>
+		<tag>configuration-0.0.26</tag>
 	</scm>
 
 	<distributionManagement>
