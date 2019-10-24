@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
@@ -72,13 +74,13 @@
 		<project.config.repository.oss.phase>deploy</project.config.repository.oss.phase>
 
 		<java.version>11</java.version>
-		<jackson.version>2.9.9</jackson.version>
+		<jackson.version>2.10.0</jackson.version>
 		<slf4j.version>1.7.26</slf4j.version>
 		<aspectj.tools.version>1.9.4</aspectj.tools.version>
 		<apache.commons.version>3.8.1</apache.commons.version>
 		<junit.version>4.12</junit.version>
 		<junit-jupiter.version>5.4.2</junit-jupiter.version>
-		<spring.boot.version>2.1.8.RELEASE</spring.boot.version>
+		<spring.boot.version>2.2.0.RELEASE</spring.boot.version>
 		<spring.boot.oauth.version>2.3.6.RELEASE</spring.boot.oauth.version>
 		<spring.boot.social.version>2.0.3.RELEASE</spring.boot.social.version>
 		<apache.collections.version>4.3</apache.collections.version>
@@ -475,53 +477,6 @@
 				</executions>
 			</plugin>
 
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-source-plugin</artifactId>
-				<version>3.0.1</version>
-				<executions>
-					<execution>
-						<id>attach-sources</id>
-						<phase>${project.config.attach.sources.phase}</phase>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-						<configuration>
-							<includes>
-								<include>${project.config.source.main.compile.include}</include>
-							</includes>
-							<excludes>
-								<exclude>${project.config.source.main.compile.exclude}</exclude>
-							</excludes>
-						</configuration>
-					</execution>
-				</executions>
-
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>3.0.1</version>
-				<executions>
-					<execution>
-						<id>attach-javadocs</id>
-						<phase>${project.config.attach.javadocs.phase}</phase>
-						<goals>
-							<goal>jar</goal>
-						</goals>
-						<configuration>
-							<failOnError>false</failOnError>
-							<sourceFileIncludes>
-								<sourceFileInclude>${project.config.source.main.compile.include}</sourceFileInclude>
-							</sourceFileIncludes>
-							<sourceFileExcludes>
-								<sourceFileExclude>${project.config.source.main.compile.exclude}</sourceFileExclude>
-							</sourceFileExcludes>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
 
 			<plugin>
 				<groupId>org.jacoco</groupId>
@@ -647,6 +602,54 @@
 			</activation>
 			<build>
 				<plugins>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>3.0.1</version>
+						<executions>
+							<execution>
+								<id>attach-sources</id>
+								<phase>${project.config.attach.sources.phase}</phase>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+								<configuration>
+									<includes>
+										<include>${project.config.source.main.compile.include}</include>
+									</includes>
+									<excludes>
+										<exclude>${project.config.source.main.compile.exclude}</exclude>
+									</excludes>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>3.0.1</version>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<phase>${project.config.attach.javadocs.phase}</phase>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+								<configuration>
+									<failOnError>false</failOnError>
+									<sourceFileIncludes>
+										<sourceFileInclude>${project.config.source.main.compile.include}</sourceFileInclude>
+									</sourceFileIncludes>
+									<sourceFileExcludes>
+										<sourceFileExclude>${project.config.source.main.compile.exclude}</sourceFileExclude>
+									</sourceFileExcludes>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-gpg-plugin</artifactId>
@@ -661,6 +664,7 @@
 							</execution>
 						</executions>
 					</plugin>
+
 					<plugin>
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>exec-maven-plugin</artifactId>
@@ -685,6 +689,7 @@
 							</execution>
 						</executions>
 					</plugin>
+
 				</plugins>
 			</build>
 		</profile>
