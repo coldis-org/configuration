@@ -77,12 +77,12 @@
 		<aspectj.tools.version>1.9.4</aspectj.tools.version>
 		<apache.commons.version>3.8.1</apache.commons.version>
 		<junit.version>4.12</junit.version>
-		<junit-jupiter.version>5.4.2</junit-jupiter.version>
-		<spring.boot.version>2.2.1.RELEASE</spring.boot.version>
+		<junit-jupiter.version>5.5.2</junit-jupiter.version>
+		<spring.boot.version>2.2.2.RELEASE</spring.boot.version>
 		<spring.boot.oauth.version>2.3.6.RELEASE</spring.boot.oauth.version>
 		<spring.boot.social.version>2.0.3.RELEASE</spring.boot.social.version>
-		<apache.collections.version>4.3</apache.collections.version>
-		<apache.text.version>1.6</apache.text.version>
+		<apache.collections.version>4.4</apache.collections.version>
+		<apache.text.version>1.8</apache.text.version>
 		<apache.io.version>2.6</apache.io.version>
 		<velocity.version>1.7</velocity.version>
 		<itext.version>5.5.13.1</itext.version>
@@ -90,8 +90,7 @@
 		<jpa>2.2</jpa>
 		<swagger.version>1.5.20</swagger.version>
 		<springfox.swagger.version>2.9.2</springfox.swagger.version>
-		<hikaricp.version>3.3.1</hikaricp.version>
-
+		<hikaricp.version>3.4.1</hikaricp.version>
 
 	</properties>
 
