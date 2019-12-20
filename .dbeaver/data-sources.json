@@ -1,0 +1,34 @@
+{
+	"folders": {},
+	"connections": {
+		"postgres-jdbc-16f0f8fab67-1d242f675b4c6a55": {
+			"provider": "postgresql",
+			"driver": "postgres-jdbc",
+			"name": "Production - Personal lending",
+			"save-password": true,
+			"read-only": false,
+			"configuration": {
+				"host": "supersim.com.br",
+				"port": "5432",
+				"database": "personallending",
+				"url": "jdbc:postgresql://supersim.com.br:5432/personallending",
+				"type": "dev",
+				"provider-properties": {
+					"@dbeaver-show-non-default-db@": "false",
+					"@dbeaver-show-template-db@": "false"
+				},
+				"handlers": {}
+			}
+		}
+	},
+	"connection-types": {
+		"dev": {
+			"name": "Development",
+			"color": "255,255,255",
+			"description": "Regular development database",
+			"auto-commit": true,
+			"confirm-execute": false,
+			"confirm-data-change": false
+		}
+	}
+}
