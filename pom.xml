@@ -1,10 +1,12 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.coldis</groupId>
 	<artifactId>configuration</artifactId>
-	<version>0.0.33-SNAPSHOT</version>
+	<version>0.0.34-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Common configuration</name>
@@ -91,6 +93,16 @@
 		<swagger.version>1.5.20</swagger.version>
 		<springfox.swagger.version>2.9.2</springfox.swagger.version>
 		<hikaricp.version>3.4.1</hikaricp.version>
+
+		<maven.dependency.version>3.1.1</maven.dependency.version>
+		<maven.compiler.version>3.8.1</maven.compiler.version>
+		<maven.jar.version>3.2.0</maven.jar.version>
+		<maven.exec.version>1.6.0</maven.exec.version>
+		<maven.assembly.version>3.2.0</maven.assembly.version>
+		<maven.jacoco.version>0.8.5</maven.jacoco.version>
+		<maven.surefire.version>2.22.2</maven.surefire.version>
+		<maven.deploy.version>2.8.2</maven.deploy.version>
+		<maven.release.version>2.5.3</maven.release.version>
 
 	</properties>
 
@@ -223,7 +235,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
-				<version>3.1.1</version>
+				<version>${maven.dependency.version}</version>
 				<executions>
 					<execution>
 						<phase>${project.config.spring.aspect.ltw.phase}</phase>
@@ -259,7 +271,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.8.0</version>
+				<version>${maven.compiler.version}</version>
 
 				<configuration>
 					<release>${java.version}</release>
@@ -403,7 +415,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
-				<version>3.1.1</version>
+				<version>${maven.jar.version}</version>
 				<configuration>
 					<includes>
 						<include>${project.config.source.main.package.include}</include>
@@ -417,7 +429,7 @@
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>exec-maven-plugin</artifactId>
-				<version>1.6.0</version>
+				<version>${maven.exec.version}</version>
 				<executions>
 					<execution>
 						<id>docker-build</id>
@@ -458,7 +470,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
-				<version>3.1.1</version>
+				<version>${maven.assembly.version}</version>
 				<executions>
 					<execution>
 						<phase>${project.config.assembly.phase}</phase>
@@ -478,7 +490,7 @@
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.3</version>
+				<version>${maven.jacoco.version}</version>
 				<configuration>
 					<destFile>${project.build.directory}/coverage-reports/jacoco-unit.exec</destFile>
 					<dataFile>${project.build.directory}/coverage-reports/jacoco-unit.exec</dataFile>
@@ -507,7 +519,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.22.1</version>
+				<version>${maven.surefire.version}</version>
 				<configuration>
 					<argLine>${project.config.source.test.args}</argLine>
 					<reuseForks>false</reuseForks>
@@ -535,7 +547,7 @@
 
 			<plugin>
 				<artifactId>maven-deploy-plugin</artifactId>
-				<version>2.8.2</version>
+				<version>${maven.deploy.version}</version>
 				<executions>
 					<execution>
 						<id>default-deploy</id>
@@ -551,7 +563,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
-				<version>2.5.3</version>
+				<version>${maven.release.version}</version>
 				<configuration>
 					<localCheckout>true</localCheckout>
 					<arguments>-Dgpg.passphrase=${project.config.release.gpg.passphrase}
@@ -565,7 +577,7 @@
 			<plugin>
 				<groupId>org.sonatype.plugins</groupId>
 				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>1.6.7</version>
+				<version>${maven.nexus.staging.version}</version>
 				<extensions>true</extensions>
 				<executions>
 					<execution>
