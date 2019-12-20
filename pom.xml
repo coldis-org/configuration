@@ -6,7 +6,7 @@
 
 	<groupId>org.coldis</groupId>
 	<artifactId>configuration</artifactId>
-	<version>0.0.34-SNAPSHOT</version>
+	<version>0.0.35-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Common configuration</name>
