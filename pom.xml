@@ -103,6 +103,7 @@
 		<maven.surefire.version>2.22.2</maven.surefire.version>
 		<maven.deploy.version>2.8.2</maven.deploy.version>
 		<maven.release.version>2.5.3</maven.release.version>
+		<maven.nexus.staging.version>1.6.8</maven.nexus.staging.version>
 
 	</properties>
 
