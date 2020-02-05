@@ -95,6 +95,7 @@
 
 		<maven.dependency.version>3.1.1</maven.dependency.version>
 		<maven.compiler.version>3.8.1</maven.compiler.version>
+		<maven.aspectj.version>1.12.6</maven.aspectj.version>
 		<maven.jar.version>3.2.0</maven.jar.version>
 		<maven.exec.version>1.6.0</maven.exec.version>
 		<maven.assembly.version>3.2.0</maven.assembly.version>
@@ -370,9 +371,9 @@
 			</plugin>
 
 			<plugin>
-				<groupId>com.github.m50d</groupId>
+				<groupId>com.nickwongdev</groupId>
 				<artifactId>aspectj-maven-plugin</artifactId>
-				<version>1.11.1</version>
+				<version>${maven.aspectj.version}</version>
 				<configuration>
 					<source>11</source>
 					<target>11</target>
