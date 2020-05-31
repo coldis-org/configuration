@@ -72,26 +72,26 @@
 		<project.config.repository.oss.phase>deploy</project.config.repository.oss.phase>
 
 		<java.version>11</java.version>
-		<jackson.version>2.10.1</jackson.version>
-		<slf4j.version>1.7.26</slf4j.version>
-		<aspectj.tools.version>1.9.4</aspectj.tools.version>
-		<apache.commons.version>3.8.1</apache.commons.version>
+		<jackson.version>2.11.0</jackson.version>
+		<slf4j.version>1.7.30</slf4j.version>
+		<aspectj.tools.version>1.9.5</aspectj.tools.version>
+		<apache.commons.version>3.10</apache.commons.version>
 		<junit.version>4.12</junit.version>
-		<junit-jupiter.version>5.5.2</junit-jupiter.version>
-		<spring.boot.version>2.2.6.RELEASE</spring.boot.version>
-		<spring.boot.oauth.version>2.4.0.RELEASE</spring.boot.oauth.version>
-		<spring.boot.social.version>2.0.3.RELEASE</spring.boot.social.version>
+		<junit-jupiter.version>5.6.2</junit-jupiter.version>
+		<spring.boot.version>2.3.0.RELEASE</spring.boot.version>
+		<spring.boot.oauth.version>2.5.0.RELEASE</spring.boot.oauth.version>
+		<spring.boot.social.version>2.1.6.RELEASE</spring.boot.social.version>
 		<apache.collections.version>4.4</apache.collections.version>
 		<apache.text.version>1.8</apache.text.version>
-		<apache.io.version>2.6</apache.io.version>
+		<apache.io.version>2.7</apache.io.version>
 		<velocity.version>1.7</velocity.version>
 		<itext.version>5.5.13.1</itext.version>
 		<javax-persistence.version>2.2</javax-persistence.version>
 		<jpa>2.2</jpa>
-		<swagger.version>1.5.20</swagger.version>
+		<swagger.version>1.6.1</swagger.version>
 		<springfox.swagger.version>2.9.2</springfox.swagger.version>
-		<hikaricp.version>3.4.2</hikaricp.version>
-		<postgresql.version>42.2.9</postgresql.version>
+		<hikaricp.version>3.4.5</hikaricp.version>
+		<postgresql.version>42.2.12</postgresql.version>
 
 		<maven.dependency.version>3.1.1</maven.dependency.version>
 		<maven.compiler.version>3.8.1</maven.compiler.version>
