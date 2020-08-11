@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
@@ -92,6 +94,7 @@
 		<springfox.swagger.version>2.9.2</springfox.swagger.version>
 		<hikaricp.version>3.4.5</hikaricp.version>
 		<postgresql.version>42.2.12</postgresql.version>
+		<hibernate.version> 5.4.20.Final</hibernate.version>
 
 		<maven.dependency.version>3.1.1</maven.dependency.version>
 		<maven.compiler.version>3.8.1</maven.compiler.version>
@@ -532,6 +535,22 @@
 					<argLine>${project.config.source.test.args}</argLine>
 					<reuseForks>false</reuseForks>
 				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.hibernate.orm.tooling</groupId>
+				<artifactId>hibernate-enhance-maven-plugin</artifactId>
+				<version>${hibernate.version}</version>
+				<executions>
+					<execution>
+						<configuration>
+							<enableLazyInitialization>true</enableLazyInitialization>
+						</configuration>
+						<goals>
+							<goal>enhance</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 
 			<plugin>
