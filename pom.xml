@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
@@ -75,7 +77,7 @@
 		<project.config.repository.oss.phase>deploy</project.config.repository.oss.phase>
 
 		<java.version>11</java.version>
-		<jackson.version>2.12.2</jackson.version>
+		<jackson.version>2.12.5</jackson.version>
 		<slf4j.version>1.7.30</slf4j.version>
 		<aspectj.tools.version>1.9.6</aspectj.tools.version>
 		<junit.version>4.12</junit.version>
@@ -95,7 +97,7 @@
 		<springfox.swagger.version>3.0.0</springfox.swagger.version>
 		<hikaricp.version>4.0.3</hikaricp.version>
 		<postgresql.version>42.2.19</postgresql.version>
-		<hibernate.version>5.4.30.Final</hibernate.version>
+		<hibernate.version>5.5.7.Final</hibernate.version>
 
 		<maven.dependency.version>3.1.2</maven.dependency.version>
 		<maven.compiler.version>3.8.1</maven.compiler.version>
@@ -456,6 +458,8 @@
 								<argument>${project.config.infrastructure.build.path}</argument>
 								<argument>--include-modules</argument>
 								<argument>${project.config.infrastructure.include}</argument>
+								<argument>--version</argument>
+								<argument>${project.config.infrastructure.version}</argument>
 							</arguments>
 						</configuration>
 					</execution>
@@ -473,6 +477,8 @@
 								<argument>${project.config.infrastructure.deploy.path}</argument>
 								<argument>--include-modules</argument>
 								<argument>${project.config.infrastructure.include}</argument>
+								<argument>--version</argument>
+								<argument>${project.config.infrastructure.version}</argument>
 							</arguments>
 						</configuration>
 					</execution>
@@ -720,7 +726,7 @@
 										<argument>--base-directory</argument>
 										<argument>${project.config.infrastructure.release.path}</argument>
 										<argument>--version</argument>
-										<argument>${project.artifactId}</argument>
+										<argument>${project.config.infrastructure.version}</argument>
 									</arguments>
 								</configuration>
 							</execution>
