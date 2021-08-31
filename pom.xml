@@ -457,7 +457,7 @@
 								<argument>--include-modules</argument>
 								<argument>${project.config.infrastructure.include}</argument>
 								<argument>--version</argument>
-								<argument>${project.config.infrastructure.version}</argument>
+								<argument>${project.version}</argument>
 							</arguments>
 						</configuration>
 					</execution>
@@ -476,7 +476,7 @@
 								<argument>--include-modules</argument>
 								<argument>${project.config.infrastructure.include}</argument>
 								<argument>--version</argument>
-								<argument>${project.config.infrastructure.version}</argument>
+								<argument>${project.version}</argument>
 							</arguments>
 						</configuration>
 					</execution>
@@ -724,7 +724,7 @@
 										<argument>--base-directory</argument>
 										<argument>${project.config.infrastructure.release.path}</argument>
 										<argument>--version</argument>
-										<argument>${project.config.infrastructure.version}</argument>
+										<argument>${project.version}</argument>
 									</arguments>
 								</configuration>
 							</execution>
