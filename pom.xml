@@ -78,8 +78,7 @@
 		<jackson.version>2.12.5</jackson.version>
 		<slf4j.version>1.7.30</slf4j.version>
 		<aspectj.tools.version>1.9.6</aspectj.tools.version>
-		<junit.version>4.12</junit.version>
-		<junit-jupiter.version>5.7.1</junit-jupiter.version>
+		<junit-jupiter.version>5.8.1</junit-jupiter.version>
 		<spring.boot.version>2.2.13.RELEASE</spring.boot.version>
 		<spring.boot.oauth.version>2.5.0.RELEASE</spring.boot.oauth.version>
 		<spring.boot.social.version>2.1.6.RELEASE</spring.boot.social.version>
