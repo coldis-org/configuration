@@ -75,10 +75,11 @@
 		<project.config.repository.oss.phase>deploy</project.config.repository.oss.phase>
 
 		<java.version>11</java.version>
-		<jackson.version>2.12.5</jackson.version>
-		<slf4j.version>1.7.30</slf4j.version>
+		<jackson.version>2.13.0</jackson.version>
+		<slf4j.version>1.7.32</slf4j.version>
 		<aspectj.tools.version>1.9.6</aspectj.tools.version>
 		<junit-jupiter.version>5.8.1</junit-jupiter.version>
+		<junit.version>4.13.2</junit.version>
 		<spring.boot.version>2.2.13.RELEASE</spring.boot.version>
 		<spring.boot.oauth.version>2.5.0.RELEASE</spring.boot.oauth.version>
 		<spring.boot.social.version>2.1.6.RELEASE</spring.boot.social.version>
@@ -90,11 +91,11 @@
 		<itext.version>5.5.13.2</itext.version>
 		<javax-persistence.version>2.2</javax-persistence.version>
 		<jpa>2.2</jpa>
-		<swagger.version>1.6.2</swagger.version>
+		<swagger.version>1.6.3</swagger.version>
 		<springfox.swagger.version>3.0.0</springfox.swagger.version>
 		<hikaricp.version>5.0.0</hikaricp.version>
-		<postgresql.version>42.3.0</postgresql.version>
-		<hibernate.version>5.5.7.Final</hibernate.version>
+		<postgresql.version>42.3.1</postgresql.version>
+		<hibernate.version>5.6.1.Final</hibernate.version>
 
 		<maven.dependency.version>3.1.2</maven.dependency.version>
 		<maven.compiler.version>3.8.1</maven.compiler.version>
