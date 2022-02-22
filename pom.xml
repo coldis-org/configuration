@@ -4,7 +4,7 @@
 
 	<groupId>org.coldis</groupId>
 	<artifactId>configuration</artifactId>
-	<version>0.0.60-SNAPSHOT</version>
+	<version>0.0.59-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Common configuration</name>
@@ -40,7 +40,7 @@
 		<project.config.source.test.compile.exclude>zzz</project.config.source.test.compile.exclude>
 		<project.config.source.test.compile.annotationProcessors />
 		<project.config.source.test.aspect.phase>process-test-classes</project.config.source.test.aspect.phase>
-		<project.config.infrastructure.include />
+		<project.config.infrastructure.include>*</project.config.infrastructure.include>
 		<project.config.infrastructure.build.path />
 		<project.config.infrastructure.build.phase>none</project.config.infrastructure.build.phase>
 		<project.config.infrastructure.deploy.path>${project.config.infrastructure.build.path}</project.config.infrastructure.deploy.path>
@@ -474,7 +474,7 @@
 								<argument>--base-directory</argument>
 								<argument>${project.config.infrastructure.deploy.path}</argument>
 								<argument>--include-modules</argument>
-								<argument>"${project.config.infrastructure.include}"</argument>
+								<argument>${project.config.infrastructure.include}</argument>
 								<argument>--version</argument>
 								<argument>${project.version}</argument>
 							</arguments>
