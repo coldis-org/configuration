@@ -474,7 +474,7 @@
 								<argument>--base-directory</argument>
 								<argument>${project.config.infrastructure.deploy.path}</argument>
 								<argument>--include-modules</argument>
-								<argument>${project.config.infrastructure.include}</argument>
+								<argument>"${project.config.infrastructure.include}"</argument>
 								<argument>--version</argument>
 								<argument>${project.version}</argument>
 							</arguments>
