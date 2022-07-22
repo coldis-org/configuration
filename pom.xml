@@ -4,7 +4,7 @@
 
 	<groupId>org.coldis</groupId>
 	<artifactId>configuration</artifactId>
-	<version>1.0.5-SNAPSHOT</version>
+	<version>1.0.4-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Common configuration</name>
@@ -100,8 +100,6 @@
 		<maven.dependency.version>3.3.0</maven.dependency.version>
 		<maven.compiler.version>3.10.1</maven.compiler.version>
 		<maven.aspectj.version>1.14.0</maven.aspectj.version>
-		<maven.source.version>3.2.1</maven.source.version>
-		<maven.javadoc.version>3.4.0</maven.javadoc.version>
 		<maven.jar.version>3.2.2</maven.jar.version>
 		<maven.exec.version>3.1.0</maven.exec.version>
 		<maven.asm.version>9.3</maven.asm.version>
@@ -110,8 +108,6 @@
 		<maven.surefire.version>3.0.0-M7</maven.surefire.version>
 		<maven.deploy.version>3.0.0</maven.deploy.version>
 		<maven.release.version>3.0.0-M6</maven.release.version>
-		<maven.gpg.version>3.0.1</maven.gpg.version>
-		<maven.deploy.version>3.0.1</maven.deploy.version>
 		<maven.nexus.staging.version>1.6.13</maven.nexus.staging.version>
 
 	</properties>
@@ -120,7 +116,7 @@
 		<url>https://github.com/coldis-org/configuration</url>
 		<connection>scm:git:https://github.com/coldis-org/configuration.git</connection>
 		<developerConnection>scm:git:git@github.com:coldis-org/configuration.git</developerConnection>
-		<tag>configuration-1.0.4</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<distributionManagement>
@@ -215,7 +211,7 @@
 		</dependencies>
 	</dependencyManagement>
 
-	<dependencies />
+	<dependencies></dependencies>
 
 	<build>
 
@@ -649,7 +645,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-source-plugin</artifactId>
-						<version>${maven.source.version}</version>
+						<version>3.0.1</version>
 						<executions>
 							<execution>
 								<id>attach-sources</id>
@@ -672,7 +668,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
-						<version>${maven.javadoc.version}</version>
+						<version>3.0.1</version>
 						<executions>
 							<execution>
 								<id>attach-javadocs</id>
@@ -696,7 +692,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-gpg-plugin</artifactId>
-						<version>${maven.gpg.version}</version>
+						<version>1.6</version>
 						<executions>
 							<execution>
 								<id>sign-artifacts</id>
@@ -711,7 +707,7 @@
 					<plugin>
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>exec-maven-plugin</artifactId>
-						<version>${maven.exec.version}</version>
+						<version>1.6.0</version>
 						<executions>
 							<execution>
 								<id>docker-push-release</id>
