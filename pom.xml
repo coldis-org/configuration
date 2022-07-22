@@ -111,7 +111,7 @@
 		<maven.deploy.version>3.0.0</maven.deploy.version>
 		<maven.release.version>3.0.0-M6</maven.release.version>
 		<maven.gpg.version>3.0.1</maven.gpg.version>
-		<maven.deploy.version>3.0.1</maven.deploy.version>
+		<maven.deploy.version>3.0.0</maven.deploy.version>
 		<maven.nexus.staging.version>1.6.13</maven.nexus.staging.version>
 
 	</properties>
