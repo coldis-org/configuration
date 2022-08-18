@@ -94,7 +94,7 @@
 		<swagger.version>1.6.5</swagger.version>
 		<springfox.swagger.version>3.0.0</springfox.swagger.version>
 		<hikaricp.version>5.0.1</hikaricp.version>
-		<postgresql.version>42.3.3</postgresql.version>
+		<postgresql.version>42.4.1</postgresql.version>
 		<hibernate.version>5.6.4.Final</hibernate.version>
 
 		<maven.dependency.version>3.3.0</maven.dependency.version>
