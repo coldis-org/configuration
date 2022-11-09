@@ -74,7 +74,7 @@
 		<project.config.repository.public.repository.url>https://oss.sonatype.org/</project.config.repository.public.repository.url>
 		<project.config.repository.oss.phase>deploy</project.config.repository.oss.phase>
 
-		<java.version>17</java.version>
+		<java.version>15</java.version>
 		<jackson.version>2.13.3</jackson.version>
 		<slf4j.version>1.7.36</slf4j.version>
 		<aspectj.tools.version>1.9.8</aspectj.tools.version>
@@ -289,7 +289,6 @@
 
 				<configuration>
 					<release>${java.version}</release>
-					<forceJavacCompilerUse>true</forceJavacCompilerUse>
 				</configuration>
 
 				<executions>
@@ -383,7 +382,6 @@
 				<version>${maven.aspectj.version}</version>
 				<configuration>
 					<source>${java.version}</source>
-					<target>${java.version}</target>
 					<proc>none</proc>
 					<complianceLevel>${java.version}</complianceLevel>
 					<showWeaveInfo>true</showWeaveInfo>
