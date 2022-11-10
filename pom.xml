@@ -109,7 +109,7 @@
 		<maven.jacoco.version>0.8.6</maven.jacoco.version>
 		<maven.surefire.version>3.0.0-M7</maven.surefire.version>
 		<maven.deploy.version>3.0.0</maven.deploy.version>
-		<maven.release.version>3.0.0-M7</maven.release.version>
+		<maven.release.version>2.5.3</maven.release.version>
 		<maven.gpg.version>3.0.1</maven.gpg.version>
 		<maven.deploy.version>3.0.0</maven.deploy.version>
 		<maven.nexus.staging.version>1.6.13</maven.nexus.staging.version>
