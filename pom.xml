@@ -74,7 +74,7 @@
 		<project.config.repository.public.repository.url>https://oss.sonatype.org/</project.config.repository.public.repository.url>
 		<project.config.repository.oss.phase>deploy</project.config.repository.oss.phase>
 
-		<java.version>15</java.version>
+		<java.version>17</java.version>
 		<jackson.version>2.13.3</jackson.version>
 		<slf4j.version>1.7.36</slf4j.version>
 		<aspectj.tools.version>1.9.8</aspectj.tools.version>
@@ -102,14 +102,14 @@
 		<maven.aspectj.version>1.14.0</maven.aspectj.version>
 		<maven.source.version>3.2.1</maven.source.version>
 		<maven.javadoc.version>3.4.0</maven.javadoc.version>
-		<maven.jar.version>3.2.2</maven.jar.version>
+		<maven.jar.version>3.3.0</maven.jar.version>
 		<maven.exec.version>3.1.0</maven.exec.version>
-		<maven.asm.version>9.3</maven.asm.version>
-		<maven.assembly.version>3.4.1</maven.assembly.version>
+		<maven.asm.version>9.4</maven.asm.version>
+		<maven.assembly.version>3.4.2</maven.assembly.version>
 		<maven.jacoco.version>0.8.6</maven.jacoco.version>
 		<maven.surefire.version>3.0.0-M7</maven.surefire.version>
 		<maven.deploy.version>3.0.0</maven.deploy.version>
-		<maven.release.version>2.5.3</maven.release.version>
+		<maven.release.version>3.0.0-M7</maven.release.version>
 		<maven.gpg.version>3.0.1</maven.gpg.version>
 		<maven.deploy.version>3.0.0</maven.deploy.version>
 		<maven.nexus.staging.version>1.6.13</maven.nexus.staging.version>
@@ -289,7 +289,9 @@
 
 				<configuration>
 					<release>${java.version}</release>
-				</configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
 
 				<executions>
 
@@ -382,6 +384,7 @@
 				<version>${maven.aspectj.version}</version>
 				<configuration>
 					<source>${java.version}</source>
+					<target>${java.version}</target>
 					<proc>none</proc>
 					<complianceLevel>${java.version}</complianceLevel>
 					<showWeaveInfo>true</showWeaveInfo>
