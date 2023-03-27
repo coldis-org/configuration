@@ -88,7 +88,7 @@
 		<apache.text.version>1.10.0</apache.text.version>
 		<apache.io.version>2.11.0</apache.io.version>
 		<velocity.version>1.7</velocity.version>
-		<itext.version>5.5.13.2</itext.version>
+		<itext.version>5.5.13.3</itext.version>
 		<javax-persistence.version>2.2</javax-persistence.version>
 		<jpa>2.2</jpa>
 		<swagger.version>1.6.9</swagger.version>
