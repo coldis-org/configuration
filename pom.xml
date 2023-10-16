@@ -96,6 +96,7 @@
 		<hikaricp.version>5.0.1</hikaricp.version>
 		<postgresql.version>42.6.0</postgresql.version>
 		<hibernate.version>6.2.7.Final</hibernate.version>
+		<tomcat.version>10.1.14</tomcat.version>
 
 		<maven.dependency.version>3.3.0</maven.dependency.version>
 		<maven.compiler.version>3.10.1</maven.compiler.version>
