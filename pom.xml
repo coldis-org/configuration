@@ -4,7 +4,7 @@
 
 	<groupId>org.coldis</groupId>
 	<artifactId>configuration</artifactId>
-	<version>2.0.3-SNAPSHOT</version>
+	<version>2.0.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Common configuration</name>
@@ -63,7 +63,7 @@
 		<project.config.spring.boot.package.args />
 		<project.config.spring.boot.package.main />
 		<project.config.release.gpg.passphrase />
-		<project.config.release.gpg.phase>package</project.config.release.gpg.phase>
+		<project.config.release.gpg.phase>verify</project.config.release.gpg.phase>
 
 		<project.config.repository.private>coldis-private-software-repository</project.config.repository.private>
 		<project.config.repository.private.snapshot.url>http://software-repository.infrastructure.coldis.org/repository/maven-snapshots</project.config.repository.private.snapshot.url>
@@ -109,7 +109,7 @@
 		<maven.surefire.version>3.2.2</maven.surefire.version>
 		<maven.deploy.version>3.1.1</maven.deploy.version>
 		<maven.release.version>3.0.1</maven.release.version>
-		<maven.gpg.version>3.1.0</maven.gpg.version>
+		<maven.gpg.version>3.0.1</maven.gpg.version>
 		<maven.nexus.staging.version>1.6.13</maven.nexus.staging.version>
 
 	</properties>
