@@ -64,7 +64,7 @@
 		<project.config.spring.boot.package.phase>none</project.config.spring.boot.package.phase>
 		<project.config.spring.boot.package.args />
 		<project.config.spring.boot.package.main />
-		<project.config.release.gpg.passphrase>281oen</project.config.release.gpg.passphrase>
+		<project.config.release.gpg.passphrase />
 		<project.config.release.gpg.phase>verify</project.config.release.gpg.phase>
 
 		<project.config.repository.private>coldis-private-software-repository</project.config.repository.private>
@@ -614,9 +614,6 @@
 						<goals>
 							<goal>deploy</goal>
 						</goals>
-						<configuration>
-							<updateReleaseInfo>true</updateReleaseInfo>
-						</configuration>
 					</execution>
 				</executions>
 			</plugin>
@@ -736,8 +733,8 @@
 									<goal>sign</goal>
 								</goals>
 								<configuration>
-									<passphrase>
-										${project.config.release.gpg.passphrase}</passphrase>
+									<passphrase>${project.config.release.gpg.passphrase}</passphrase>
+									<ascDirectory>${project.build.directory}</ascDirectory>
 								</configuration>
 							</execution>
 						</executions>
