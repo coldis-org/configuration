@@ -62,7 +62,7 @@
 		<project.config.spring.boot.package.phase>none</project.config.spring.boot.package.phase>
 		<project.config.spring.boot.package.args />
 		<project.config.spring.boot.package.main />
-		<project.config.release.gpg.passphrase />
+		<!--<project.config.release.gpg.passphrase />-->
 		<project.config.release.gpg.phase>verify</project.config.release.gpg.phase>
 
 		<project.config.repository.private>coldis-private-software-repository</project.config.repository.private>
@@ -109,7 +109,7 @@
 		<maven.surefire.version>3.2.2</maven.surefire.version>
 		<maven.deploy.version>3.1.1</maven.deploy.version>
 		<maven.release.version>3.0.1</maven.release.version>
-		<maven.gpg.version>3.0.1</maven.gpg.version>
+		<maven.gpg.version>3.1.0</maven.gpg.version>
 		<maven.nexus.staging.version>1.6.13</maven.nexus.staging.version>
 
 	</properties>
@@ -118,7 +118,7 @@
 		<url>https://github.com/coldis-org/configuration</url>
 		<connection>scm:git:https://github.com/coldis-org/configuration.git</connection>
 		<developerConnection>scm:git:git@github.com:coldis-org/configuration.git</developerConnection>
-		<tag>configuration-2.0.2</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<distributionManagement>
