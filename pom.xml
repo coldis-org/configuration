@@ -663,7 +663,6 @@
 			<activation>
 				<property>
 					<name>performRelease</name>
-					<value>true</value>
 				</property>
 			</activation>
 			<build>
@@ -733,7 +732,6 @@
 								</goals>
 								<configuration>
 									<passphrase>${project.config.release.gpg.passphrase}</passphrase>
-									<ascDirectory>${project.build.directory}</ascDirectory>
 								</configuration>
 							</execution>
 						</executions>
