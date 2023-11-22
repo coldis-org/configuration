@@ -1,10 +1,12 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.coldis</groupId>
 	<artifactId>configuration</artifactId>
-	<version>2.0.6-SNAPSHOT</version>
+	<version>2.0.7-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Common configuration</name>
@@ -43,9 +45,11 @@
 		<project.config.infrastructure.include>*</project.config.infrastructure.include>
 		<project.config.infrastructure.build.path />
 		<project.config.infrastructure.build.phase>none</project.config.infrastructure.build.phase>
-		<project.config.infrastructure.deploy.path>${project.config.infrastructure.build.path}</project.config.infrastructure.deploy.path>
+		<project.config.infrastructure.deploy.path>
+			${project.config.infrastructure.build.path}</project.config.infrastructure.deploy.path>
 		<project.config.infrastructure.deploy.phase>none</project.config.infrastructure.deploy.phase>
-		<project.config.infrastructure.release.path>${project.config.infrastructure.build.path}</project.config.infrastructure.release.path>
+		<project.config.infrastructure.release.path>
+			${project.config.infrastructure.build.path}</project.config.infrastructure.release.path>
 		<project.config.infrastructure.release.phase>none</project.config.infrastructure.release.phase>
 		<project.config.jacoco.prepare>none</project.config.jacoco.prepare>
 		<project.config.jacoco.report>none</project.config.jacoco.report>
@@ -66,12 +70,17 @@
 		<project.config.release.gpg.phase>verify</project.config.release.gpg.phase>
 
 		<project.config.repository.private>coldis-private-software-repository</project.config.repository.private>
-		<project.config.repository.private.snapshot.url>http://software-repository.infrastructure.coldis.org/repository/maven-snapshots</project.config.repository.private.snapshot.url>
-		<project.config.repository.private.release.url>http://software-repository.infrastructure.coldis.org/repository/maven-releases</project.config.repository.private.release.url>
+		<project.config.repository.private.snapshot.url>
+			http://software-repository.infrastructure.coldis.org/repository/maven-snapshots</project.config.repository.private.snapshot.url>
+		<project.config.repository.private.release.url>
+			http://software-repository.infrastructure.coldis.org/repository/maven-releases</project.config.repository.private.release.url>
 		<project.config.repository.public>coldis-public-software-repository</project.config.repository.public>
-		<project.config.repository.public.snapshot.url>https://oss.sonatype.org/content/repositories/snapshots</project.config.repository.public.snapshot.url>
-		<project.config.repository.public.release.url>https://oss.sonatype.org/service/local/staging/deploy/maven2</project.config.repository.public.release.url>
-		<project.config.repository.public.repository.url>https://oss.sonatype.org/</project.config.repository.public.repository.url>
+		<project.config.repository.public.snapshot.url>
+			https://oss.sonatype.org/content/repositories/snapshots</project.config.repository.public.snapshot.url>
+		<project.config.repository.public.release.url>
+			https://oss.sonatype.org/service/local/staging/deploy/maven2</project.config.repository.public.release.url>
+		<project.config.repository.public.repository.url>
+			https://oss.sonatype.org/</project.config.repository.public.repository.url>
 		<project.config.repository.oss.phase>deploy</project.config.repository.oss.phase>
 
 		<java.version>21</java.version>
@@ -287,9 +296,9 @@
 
 				<configuration>
 					<release>${java.version}</release>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                </configuration>
+					<source>${java.version}</source>
+					<target>${java.version}</target>
+				</configuration>
 
 				<executions>
 
@@ -303,12 +312,15 @@
 							<proc>only</proc>
 							<failOnError>false</failOnError>
 							<includes>
-								<include>${project.config.source.main.compile.include}</include>
+								<include>
+									${project.config.source.main.compile.include}</include>
 							</includes>
 							<excludes>
-								<exclude>${project.config.source.main.compile.exclude}</exclude>
+								<exclude>
+									${project.config.source.main.compile.exclude}</exclude>
 							</excludes>
-							<annotationProcessors>${project.config.source.main.compile.annotationProcessors}</annotationProcessors>
+							<annotationProcessors>
+								${project.config.source.main.compile.annotationProcessors}</annotationProcessors>
 						</configuration>
 					</execution>
 
@@ -323,12 +335,15 @@
 							<failOnError>false</failOnError>
 							<debug>true</debug>
 							<testIncludes>
-								<testInclude>${project.config.source.test.compile.include}</testInclude>
+								<testInclude>
+									${project.config.source.test.compile.include}</testInclude>
 							</testIncludes>
 							<testExcludes>
-								<testExclude>${project.config.source.test.compile.exclude}</testExclude>
+								<testExclude>
+									${project.config.source.test.compile.exclude}</testExclude>
 							</testExcludes>
-							<annotationProcessors>${project.config.source.test.compile.annotationProcessors}</annotationProcessors>
+							<annotationProcessors>
+								${project.config.source.test.compile.annotationProcessors}</annotationProcessors>
 						</configuration>
 					</execution>
 
@@ -340,10 +355,12 @@
 						<configuration>
 							<proc>none</proc>
 							<includes>
-								<include>${project.config.source.main.compile.include}</include>
+								<include>
+									${project.config.source.main.compile.include}</include>
 							</includes>
 							<excludes>
-								<exclude>${project.config.source.main.compile.exclude}</exclude>
+								<exclude>
+									${project.config.source.main.compile.exclude}</exclude>
 							</excludes>
 						</configuration>
 					</execution>
@@ -356,10 +373,12 @@
 						<configuration>
 							<proc>none</proc>
 							<testIncludes>
-								<testInclude>${project.config.source.test.compile.include}</testInclude>
+								<testInclude>
+									${project.config.source.test.compile.include}</testInclude>
 							</testIncludes>
 							<testExcludes>
-								<testExclude>${project.config.source.test.compile.exclude}</testExclude>
+								<testExclude>
+									${project.config.source.test.compile.exclude}</testExclude>
 							</testExcludes>
 						</configuration>
 					</execution>
@@ -370,7 +389,8 @@
 					<dependency>
 						<groupId>org.ow2.asm</groupId>
 						<artifactId>asm</artifactId>
-						<version>${maven.asm.version}</version> <!-- Use newer version of ASM -->
+						<version>${maven.asm.version}</version> <!-- Use newer
+						version of ASM -->
 					</dependency>
 				</dependencies>
 
@@ -454,9 +474,11 @@
 							<executable>operational_utils_docker_build_modules</executable>
 							<arguments>
 								<argument>--base-directory</argument>
-								<argument>${project.config.infrastructure.build.path}</argument>
+								<argument>
+									${project.config.infrastructure.build.path}</argument>
 								<argument>--include-modules</argument>
-								<argument>${project.config.infrastructure.include}</argument>
+								<argument>
+									${project.config.infrastructure.include}</argument>
 								<argument>--version</argument>
 								<argument>${project.version}</argument>
 							</arguments>
@@ -473,9 +495,11 @@
 							<arguments>
 								<argument>--push</argument>
 								<argument>--base-directory</argument>
-								<argument>${project.config.infrastructure.deploy.path}</argument>
+								<argument>
+									${project.config.infrastructure.deploy.path}</argument>
 								<argument>--include-modules</argument>
-								<argument>${project.config.infrastructure.include}</argument>
+								<argument>
+									${project.config.infrastructure.include}</argument>
 								<argument>--version</argument>
 								<argument>${project.version}</argument>
 							</arguments>
@@ -509,8 +533,10 @@
 				<artifactId>jacoco-maven-plugin</artifactId>
 				<version>${maven.jacoco.version}</version>
 				<configuration>
-					<destFile>${project.build.directory}/coverage-reports/jacoco-unit.exec</destFile>
-					<dataFile>${project.build.directory}/coverage-reports/jacoco-unit.exec</dataFile>
+					<destFile>
+						${project.build.directory}/coverage-reports/jacoco-unit.exec</destFile>
+					<dataFile>
+						${project.build.directory}/coverage-reports/jacoco-unit.exec</dataFile>
 				</configuration>
 				<executions>
 
@@ -570,8 +596,10 @@
 							<goal>repackage</goal>
 						</goals>
 						<configuration>
-							<mainClass>${project.config.spring.boot.package.main}</mainClass>
-							<jvmArguments>${project.config.spring.boot.package.args}</jvmArguments>
+							<mainClass>
+								${project.config.spring.boot.package.main}</mainClass>
+							<jvmArguments>
+								${project.config.spring.boot.package.args}</jvmArguments>
 							<classifier>run</classifier>
 						</configuration>
 					</execution>
@@ -588,7 +616,9 @@
 						<goals>
 							<goal>deploy</goal>
 						</goals>
-						<configuration />
+						<configuration>
+							<updateReleaseInfo>true</updateReleaseInfo>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>
@@ -599,7 +629,8 @@
 				<version>${maven.release.version}</version>
 				<configuration>
 					<localCheckout>true</localCheckout>
-					<arguments>-DskipTests -Dmaven.test.skipTests=true -Dmaven.test.skip=true</arguments>
+					<arguments>-DskipTests -Dmaven.test.skipTests=true
+						-Dmaven.test.skip=true</arguments>
 					<goals>deploy -DskipTests -Dmaven.test.skipTests=true
 						-Dmaven.test.skip=true</goals>
 					<waitBeforeTagging>10</waitBeforeTagging>
@@ -657,10 +688,12 @@
 								</goals>
 								<configuration>
 									<includes>
-										<include>${project.config.source.main.compile.include}</include>
+										<include>
+											${project.config.source.main.compile.include}</include>
 									</includes>
 									<excludes>
-										<exclude>${project.config.source.main.compile.exclude}</exclude>
+										<exclude>
+											${project.config.source.main.compile.exclude}</exclude>
 									</excludes>
 								</configuration>
 							</execution>
@@ -681,10 +714,12 @@
 								<configuration>
 									<failOnError>false</failOnError>
 									<sourceFileIncludes>
-										<sourceFileInclude>${project.config.source.main.compile.include}</sourceFileInclude>
+										<sourceFileInclude>
+											${project.config.source.main.compile.include}</sourceFileInclude>
 									</sourceFileIncludes>
 									<sourceFileExcludes>
-										<sourceFileExclude>${project.config.source.main.compile.exclude}</sourceFileExclude>
+										<sourceFileExclude>
+											${project.config.source.main.compile.exclude}</sourceFileExclude>
 									</sourceFileExcludes>
 								</configuration>
 							</execution>
@@ -703,7 +738,8 @@
 									<goal>sign</goal>
 								</goals>
 								<configuration>
-									<passphrase>${project.config.release.gpg.passphrase}</passphrase>
+									<passphrase>
+										${project.config.release.gpg.passphrase}</passphrase>
 								</configuration>
 							</execution>
 						</executions>
@@ -719,13 +755,16 @@
 								<goals>
 									<goal>exec</goal>
 								</goals>
-								<phase>${project.config.infrastructure.release.phase}</phase>
+								<phase>
+									${project.config.infrastructure.release.phase}</phase>
 								<configuration>
-									<executable>operational_utils_docker_build_modules</executable>
+									<executable>
+										operational_utils_docker_build_modules</executable>
 									<arguments>
 										<argument>--push</argument>
 										<argument>--base-directory</argument>
-										<argument>${project.config.infrastructure.release.path}</argument>
+										<argument>
+											${project.config.infrastructure.release.path}</argument>
 										<argument>--version</argument>
 										<argument>${project.version}</argument>
 									</arguments>
