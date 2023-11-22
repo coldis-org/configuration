@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
@@ -387,7 +389,8 @@
 					<dependency>
 						<groupId>org.ow2.asm</groupId>
 						<artifactId>asm</artifactId>
-						<version>${maven.asm.version}</version> <!-- Use newer version of ASM -->
+						<version>${maven.asm.version}</version> <!-- Use newer
+						version of ASM -->
 					</dependency>
 				</dependencies>
 
@@ -628,6 +631,7 @@
 					<goals>deploy -DskipTests -Dmaven.test.skipTests=true
 						-Dmaven.test.skip=true</goals>
 					<waitBeforeTagging>10</waitBeforeTagging>
+					<releaseProfiles>release</releaseProfiles>
 				</configuration>
 			</plugin>
 
@@ -661,9 +665,7 @@
 		<profile>
 			<id>release</id>
 			<activation>
-				<property>
-					<name>performRelease</name>
-				</property>
+				<activeByDefault>false</activeByDefault>
 			</activation>
 			<build>
 				<plugins>
@@ -731,7 +733,8 @@
 									<goal>sign</goal>
 								</goals>
 								<configuration>
-									<passphrase>${project.config.release.gpg.passphrase}</passphrase>
+									<passphrase>
+										${project.config.release.gpg.passphrase}</passphrase>
 								</configuration>
 							</execution>
 						</executions>
