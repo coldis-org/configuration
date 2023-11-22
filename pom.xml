@@ -96,21 +96,20 @@
 		<hibernate.version>6.2.7.Final</hibernate.version>
 		<tomcat.version>10.1.14</tomcat.version>
 
-		<maven.dependency.version>3.3.0</maven.dependency.version>
-		<maven.compiler.version>3.10.1</maven.compiler.version>
+		<maven.dependency.version>3.6.1</maven.dependency.version>
+		<maven.compiler.version>3.11.0</maven.compiler.version>
 		<maven.aspectj.version>1.14.0</maven.aspectj.version>
-		<maven.source.version>3.2.1</maven.source.version>
-		<maven.javadoc.version>3.4.0</maven.javadoc.version>
+		<maven.source.version>3.3.0</maven.source.version>
+		<maven.javadoc.version>3.6.2</maven.javadoc.version>
 		<maven.jar.version>3.3.0</maven.jar.version>
-		<maven.exec.version>3.1.0</maven.exec.version>
-		<maven.asm.version>9.4</maven.asm.version>
-		<maven.assembly.version>3.4.2</maven.assembly.version>
-		<maven.jacoco.version>0.8.6</maven.jacoco.version>
-		<maven.surefire.version>3.0.0-M7</maven.surefire.version>
-		<maven.deploy.version>3.0.0</maven.deploy.version>
-		<maven.release.version>2.5.3</maven.release.version>
-		<maven.gpg.version>3.0.1</maven.gpg.version>
-		<maven.deploy.version>3.0.0</maven.deploy.version>
+		<maven.exec.version>3.1.1</maven.exec.version>
+		<maven.asm.version>9.6</maven.asm.version>
+		<maven.assembly.version>3.6.0</maven.assembly.version>
+		<maven.jacoco.version>0.8.11</maven.jacoco.version>
+		<maven.surefire.version>3.2.2</maven.surefire.version>
+		<maven.deploy.version>3.1.1</maven.deploy.version>
+		<maven.release.version>3.0.1</maven.release.version>
+		<maven.gpg.version>3.1.0</maven.gpg.version>
 		<maven.nexus.staging.version>1.6.13</maven.nexus.staging.version>
 
 	</properties>
