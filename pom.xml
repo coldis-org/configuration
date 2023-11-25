@@ -64,6 +64,7 @@
 		<project.config.spring.boot.package.phase>none</project.config.spring.boot.package.phase>
 		<project.config.spring.boot.package.args />
 		<project.config.spring.boot.package.main />
+		<project.config.release.arguments>-DskipTests -Dnet.bytebuddy.experimental=true</project.config.release.arguments>
 		<project.config.release.gpg.passphrase />
 		<project.config.release.gpg.phase>verify</project.config.release.gpg.phase>
 
@@ -633,10 +634,8 @@
 				<version>${maven.release.version}</version>
 				<configuration>
 					<localCheckout>true</localCheckout>
-					<arguments>-DskipTests -Dmaven.test.skipTests=true
-						-Dmaven.test.skip=true</arguments>
-					<goals>deploy -DskipTests -Dmaven.test.skipTests=true
-						-Dmaven.test.skip=true</goals>
+					<arguments>${project.config.release.arguments}</arguments>
+					<goals>deploy ${project.config.release.arguments}</goals>
 					<waitBeforeTagging>10</waitBeforeTagging>
 					<releaseProfiles>release</releaseProfiles>
 				</configuration>
