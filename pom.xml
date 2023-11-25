@@ -34,7 +34,6 @@
 		<project.config.process.test.annotations.phase>generate-test-sources</project.config.process.test.annotations.phase>
 		<project.config.source.main.compile.include>**/*.java</project.config.source.main.compile.include>
 		<project.config.source.main.compile.exclude>zzz</project.config.source.main.compile.exclude>
-		<project.config.source.main.compile.arguments>-Dnet.bytebuddy.experimental=true</project.config.source.main.compile.arguments>
 		<project.config.source.main.compile.annotationProcessors />
 		<project.config.source.main.aspect.phase>process-classes</project.config.source.main.aspect.phase>
 		<project.config.source.test.compile.include>**/*.java</project.config.source.test.compile.include>
@@ -363,7 +362,6 @@
 							<goal>compile</goal>
 						</goals>
 						<configuration>
-							<compilerArgs>${project.config.source.main.compile.arguments}</compilerArgs>
 							<proc>none</proc>
 							<includes>
 								<include>
