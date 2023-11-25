@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
@@ -64,7 +66,8 @@
 		<project.config.spring.boot.package.phase>none</project.config.spring.boot.package.phase>
 		<project.config.spring.boot.package.args />
 		<project.config.spring.boot.package.main />
-		<project.config.release.arguments>-DskipTests -Dnet.bytebuddy.experimental=true</project.config.release.arguments>
+		<project.config.release.arguments>-DskipTests
+			-Dnet.bytebuddy.experimental=true</project.config.release.arguments>
 		<project.config.release.gpg.passphrase />
 		<project.config.release.gpg.phase>verify</project.config.release.gpg.phase>
 
@@ -153,7 +156,7 @@
 
 			<dependency>
 				<groupId>org.apache.velocity</groupId>
-				<artifactId>velocity</artifactId>
+				<artifactId>velocity-engine-core</artifactId>
 				<version>${velocity.version}</version>
 			</dependency>
 
@@ -399,7 +402,8 @@
 					<dependency>
 						<groupId>org.ow2.asm</groupId>
 						<artifactId>asm</artifactId>
-						<version>${maven.asm.version}</version> <!-- Use newer version of ASM -->
+						<version>${maven.asm.version}</version> <!-- Use newer
+						version of ASM -->
 					</dependency>
 				</dependencies>
 
@@ -607,7 +611,8 @@
 						<configuration>
 							<mainClass>
 								${project.config.spring.boot.package.main}</mainClass>
-							<jvmArguments>${project.config.spring.boot.package.args}</jvmArguments>
+							<jvmArguments>
+								${project.config.spring.boot.package.args}</jvmArguments>
 							<classifier>run</classifier>
 						</configuration>
 					</execution>
