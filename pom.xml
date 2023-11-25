@@ -93,7 +93,7 @@
 		<apache.collections.version>4.4</apache.collections.version>
 		<apache.text.version>1.10.0</apache.text.version>
 		<apache.io.version>2.13.0</apache.io.version>
-		<velocity.version>1.7</velocity.version>
+		<velocity.version>2.3</velocity.version>
 		<itext.version>5.5.13.2</itext.version>
 		<javax-persistence.version>2.2</javax-persistence.version>
 		<jpa>2.2</jpa>
