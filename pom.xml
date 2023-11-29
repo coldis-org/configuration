@@ -4,7 +4,7 @@
 
 	<groupId>org.coldis</groupId>
 	<artifactId>configuration</artifactId>
-	<version>2.0.31-SNAPSHOT</version>
+	<version>2.0.31</version>
 	<packaging>pom</packaging>
 
 	<name>Common configuration</name>
@@ -128,7 +128,7 @@
 		<url>https://github.com/coldis-org/configuration</url>
 		<connection>scm:git:https://github.com/coldis-org/configuration.git</connection>
 		<developerConnection>scm:git:git@github.com:coldis-org/configuration.git</developerConnection>
-		<tag>configuration-2.0.18</tag>
+		<tag>configuration-2.0.31</tag>
 	</scm>
 
 	<distributionManagement>
