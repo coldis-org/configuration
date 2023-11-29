@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
@@ -104,6 +106,7 @@
 		<postgresql.version>42.6.0</postgresql.version>
 		<hibernate.version>6.2.7.Final</hibernate.version>
 		<tomcat.version>10.1.14</tomcat.version>
+		<artemis.version>10.1.14</artemis.version>
 
 		<maven.dependency.version>3.6.1</maven.dependency.version>
 		<maven.compiler.version>3.11.0</maven.compiler.version>
@@ -144,12 +147,19 @@
 	<dependencyManagement>
 		<dependencies>
 
+
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-parent</artifactId>
 				<version>${spring.boot.version}</version>
 				<scope>import</scope>
 				<type>pom</type>
+			</dependency>
+
+			<dependency>
+				<groupId>commons-io</groupId>
+				<artifactId>commons-io</artifactId>
+				<version>${apache.io.version}</version>
 			</dependency>
 
 			<dependency>
@@ -168,11 +178,6 @@
 				<artifactId>commons-text</artifactId>
 				<version>${apache.text.version}</version>
 			</dependency>
-			<dependency>
-				<groupId>commons-io</groupId>
-				<artifactId>commons-io</artifactId>
-				<version>${apache.io.version}</version>
-			</dependency>
 
 			<dependency>
 				<groupId>org.postgresql</groupId>
@@ -183,12 +188,12 @@
 			<dependency>
 				<groupId>org.apache.activemq</groupId>
 				<artifactId>artemis-jms-server</artifactId>
-				<version>2.31.2</version>
+				<version>${artemis.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.activemq</groupId>
 				<artifactId>artemis-jms-client</artifactId>
-				<version>2.31.2</version>
+				<version>${artemis.version}</version>
 			</dependency>
 
 			<dependency>
