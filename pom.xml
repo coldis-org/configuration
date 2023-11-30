@@ -96,8 +96,6 @@
 		<apache.io.version>2.13.0</apache.io.version>
 		<velocity.version>2.3</velocity.version>
 		<itext.version>5.5.13.2</itext.version>
-		<javax-persistence.version>2.2</javax-persistence.version>
-		<jpa>2.2</jpa>
 		<swagger.version>1.6.9</swagger.version>
 		<springfox.swagger.version>3.0.0</springfox.swagger.version>
 		<hikaricp.version>5.1.0</hikaricp.version>
@@ -128,7 +126,7 @@
 		<url>https://github.com/coldis-org/configuration</url>
 		<connection>scm:git:https://github.com/coldis-org/configuration.git</connection>
 		<developerConnection>scm:git:git@github.com:coldis-org/configuration.git</developerConnection>
-		<tag>configuration-2.0.18</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<distributionManagement>
