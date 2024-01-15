@@ -84,24 +84,22 @@
 		<project.config.repository.oss.phase>deploy</project.config.repository.oss.phase>
 
 		<java.version>21</java.version>
-		<byte-buddy.version>1.14.10</byte-buddy.version>
-		<jackson.version>2.15.2</jackson.version>
-		<slf4j.version>2.0.7</slf4j.version>
-		<aspectj.tools.version>1.9.21.M1</aspectj.tools.version>
+		<byte-buddy.version>1.14.11</byte-buddy.version>
+		<jackson.version>2.16.1</jackson.version>
+		<slf4j.version>2.0.11</slf4j.version>
+		<aspectj.tools.version>1.9.21</aspectj.tools.version>
 		<junit-jupiter.version>5.10.1</junit-jupiter.version>
-		<spring.boot.version>3.2.0</spring.boot.version>
-		<apache.commons.version>3.13.0</apache.commons.version>
+		<spring.boot.version>3.2.1</spring.boot.version>
+		<apache.commons.version>3.14.0</apache.commons.version>
 		<apache.collections.version>4.4</apache.collections.version>
-		<apache.text.version>1.10.0</apache.text.version>
-		<apache.io.version>2.13.0</apache.io.version>
+		<apache.text.version>1.11.0</apache.text.version>
+		<apache.io.version>2.15.1</apache.io.version>
 		<velocity.version>2.3</velocity.version>
 		<itext.version>5.5.13.2</itext.version>
-		<swagger.version>1.6.9</swagger.version>
-		<springfox.swagger.version>3.0.0</springfox.swagger.version>
 		<hikaricp.version>5.1.0</hikaricp.version>
-		<postgresql.version>42.7.0</postgresql.version>
-		<hibernate.version>6.4.0.Final</hibernate.version>
-		<tomcat.version>10.1.14</tomcat.version>
+		<postgresql.version>42.7.1</postgresql.version>
+		<hibernate.version>6.4.1.Final</hibernate.version>
+		<tomcat.version>10.1.18</tomcat.version>
 		<artemis.version>2.31.2</artemis.version>
 
 		<maven.dependency.version>3.6.1</maven.dependency.version>
