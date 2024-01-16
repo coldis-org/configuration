@@ -25,6 +25,8 @@
 
 	<properties>
 
+		<project.verbose>false</project.verbose>
+		
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<project.target>${project.basedir}/target</project.target>
@@ -361,7 +363,7 @@
 						<configuration>
 							<proc>only</proc>
 							<failOnError>false</failOnError>
-							<debug>true</debug>
+							<debug>${project.verbose}</debug>
 							<testIncludes>
 								<testInclude>
 									${project.config.source.test.compile.include}</testInclude>
@@ -435,7 +437,7 @@
 					<proc>none</proc>
 					<complianceLevel>${java.version}</complianceLevel>
 					<showWeaveInfo>true</showWeaveInfo>
-					<verbose>true</verbose>
+					<verbose>${project.verbose}</verbose>
 					<Xlint>ignore</Xlint>
 					<aspectLibraries>
 						<aspectLibrary>
