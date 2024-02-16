@@ -357,7 +357,6 @@
 							<goal>compile</goal>
 						</goals>
 						<configuration>
-							<fork>true</fork>
 							<showWarnings>true</showWarnings>
 							<proc>only</proc>
 							<failOnError>false</failOnError>
@@ -381,7 +380,6 @@
 							<goal>testCompile</goal>
 						</goals>
 						<configuration>
-							<fork>true</fork>
 							<showWarnings>true</showWarnings>
 							<proc>only</proc>
 							<failOnError>false</failOnError>
