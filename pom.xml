@@ -4,7 +4,7 @@
 
 	<groupId>org.coldis</groupId>
 	<artifactId>configuration</artifactId>
-	<version>2.0.57-SNAPSHOT</version>
+	<version>2.0.58-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Common configuration</name>
@@ -357,6 +357,7 @@
 							<goal>compile</goal>
 						</goals>
 						<configuration>
+							<fork>true</fork>
 							<showWarnings>true</showWarnings>
 							<proc>only</proc>
 							<failOnError>false</failOnError>
@@ -380,6 +381,7 @@
 							<goal>testCompile</goal>
 						</goals>
 						<configuration>
+							<fork>true</fork>
 							<showWarnings>true</showWarnings>
 							<proc>only</proc>
 							<failOnError>false</failOnError>
