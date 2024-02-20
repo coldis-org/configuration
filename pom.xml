@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
@@ -103,7 +105,9 @@
 		<hibernate.version>6.4.4.Final</hibernate.version>
 		<tomcat.version>10.1.19</tomcat.version>
 		<artemis.version>2.32.0</artemis.version>
-		<openapi.version>2.3.0</openapi.version>
+		<swagger-api.version>2.2.19</swagger-api.version>
+		<swagger-ui.version>5.10.3</swagger-ui.version>
+		<swagger-spring.version>2.3.0</swagger-spring.version>
 
 		<maven.dependency.version>3.6.1</maven.dependency.version>
 		<maven.compiler.version>3.12.1</maven.compiler.version>
@@ -143,7 +147,6 @@
 
 	<dependencyManagement>
 		<dependencies>
-
 
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
@@ -221,9 +224,20 @@
 			</dependency>
 
 			<dependency>
+				<groupId>io.swagger.core.v3</groupId>
+				<artifactId>swagger-core-jakarta</artifactId>
+				<version>${swagger-api.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.webjars</groupId>
+				<artifactId>swagger-ui</artifactId>
+				<version>${swagger-ui.version}</version>
+			</dependency>
+
+			<dependency>
 				<groupId>org.springdoc</groupId>
 				<artifactId>springdoc-openapi-starter-webmvc-api</artifactId>
-				<version>${openapi.version}</version>
+				<version>${swagger-spring.version}</version>
 			</dependency>
 
 			<dependency>
