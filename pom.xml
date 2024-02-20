@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
@@ -103,7 +105,7 @@
 		<hibernate.version>6.4.1.Final</hibernate.version>
 		<tomcat.version>10.1.18</tomcat.version>
 		<artemis.version>2.31.2</artemis.version>
-		<swagger.version>2.2.19</swagger.version>
+		<openapi.version>2.3.0</openapi.version>
 
 		<maven.dependency.version>3.6.1</maven.dependency.version>
 		<maven.compiler.version>3.11.0</maven.compiler.version>
@@ -221,20 +223,9 @@
 			</dependency>
 
 			<dependency>
-				<groupId>io.springfox</groupId>
-				<artifactId>springfox-boot-starter</artifactId>
-				<version>${springfox.swagger.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>io.springfox</groupId>
-				<artifactId>springfox-swagger-ui</artifactId>
-				<version>${springfox.swagger.version}</version>
-			</dependency>
-
-			<dependency>
-				<groupId>io.swagger</groupId>
-				<artifactId>swagger-annotations</artifactId>
-				<version>${swagger.version}</version>
+				<groupId>org.springdoc</groupId>
+				<artifactId>springdoc-openapi-starter-webmvc-api</artifactId>
+				<version>${openapi.version}</version>
 			</dependency>
 
 			<dependency>
@@ -242,7 +233,6 @@
 				<artifactId>HikariCP</artifactId>
 				<version>${hikaricp.version}</version>
 			</dependency>
-
 
 		</dependencies>
 	</dependencyManagement>
