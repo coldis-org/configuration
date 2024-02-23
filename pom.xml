@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
@@ -106,6 +108,10 @@
 		<swagger-api.version>2.2.19</swagger-api.version>
 		<swagger-ui.version>5.10.3</swagger-ui.version>
 		<swagger-spring.version>2.3.0</swagger-spring.version>
+		<sun-ws.version>4.0.2</sun-ws.version>
+		<ical4j.version>3.2.15</ical4j.version>
+		<metadata-extractor.version>2.19.0</metadata-extractor.version>
+		<yauaa.version>7.25.0</yauaa.version>
 
 		<maven.dependency.version>3.6.1</maven.dependency.version>
 		<maven.compiler.version>3.12.1</maven.compiler.version>
@@ -242,6 +248,24 @@
 				<groupId>com.zaxxer</groupId>
 				<artifactId>HikariCP</artifactId>
 				<version>${hikaricp.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>org.mnode.ical4j</groupId>
+				<artifactId>ical4j</artifactId>
+				<version>${ical4j.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.drewnoakes</groupId>
+				<artifactId>metadata-extractor</artifactId>
+				<version>${metadata-extractor.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>nl.basjes.parse.useragent</groupId>
+				<artifactId>yauaa</artifactId>
+				<version>${yauaa.version}</version>
 			</dependency>
 
 		</dependencies>
