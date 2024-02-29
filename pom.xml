@@ -47,17 +47,14 @@
         <project.config.infrastructure.include>*</project.config.infrastructure.include>
         <project.config.infrastructure.build.path />
         <project.config.infrastructure.build.phase>none</project.config.infrastructure.build.phase>
-        <project.config.infrastructure.deploy.path>
-            ${project.config.infrastructure.build.path}</project.config.infrastructure.deploy.path>
+        <project.config.infrastructure.deploy.path>${project.config.infrastructure.build.path}</project.config.infrastructure.deploy.path>
         <project.config.infrastructure.deploy.phase>none</project.config.infrastructure.deploy.phase>
-        <project.config.infrastructure.release.path>
-            ${project.config.infrastructure.build.path}</project.config.infrastructure.release.path>
+        <project.config.infrastructure.release.path>${project.config.infrastructure.build.path}</project.config.infrastructure.release.path>
         <project.config.infrastructure.release.phase>none</project.config.infrastructure.release.phase>
         <project.config.jacoco.prepare>none</project.config.jacoco.prepare>
         <project.config.jacoco.report>none</project.config.jacoco.report>
         <project.config.spring.aspect.ltw.phase>none</project.config.spring.aspect.ltw.phase>
-        <project.config.spring.aspect.ltw.args>-javaagent:${project.target}/aspectjweaver.jar
-            -javaagent:${project.target}/spring-instrument.jar</project.config.spring.aspect.ltw.args>
+        <project.config.spring.aspect.ltw.args>-javaagent:${project.target}/aspectjweaver.jar -javaagent:${project.target}/spring-instrument.jar</project.config.spring.aspect.ltw.args>
         <project.config.source.test.args />
         <project.config.assembly.phase>none</project.config.assembly.phase>
         <project.config.assembly.descriptors />
@@ -68,23 +65,17 @@
         <project.config.spring.boot.package.phase>none</project.config.spring.boot.package.phase>
         <project.config.spring.boot.package.args />
         <project.config.spring.boot.package.main />
-        <project.config.release.arguments>-DskipTests
-            -Dnet.bytebuddy.experimental=true</project.config.release.arguments>
+        <project.config.release.arguments>-DskipTests -Dnet.bytebuddy.experimental=true</project.config.release.arguments>
         <project.config.release.gpg.passphrase />
         <project.config.release.gpg.phase>verify</project.config.release.gpg.phase>
 
         <project.config.repository.private>coldis-private-software-repository</project.config.repository.private>
-        <project.config.repository.private.snapshot.url>
-            http://software-repository.infrastructure.coldis.org/repository/maven-snapshots</project.config.repository.private.snapshot.url>
-        <project.config.repository.private.release.url>
-            http://software-repository.infrastructure.coldis.org/repository/maven-releases</project.config.repository.private.release.url>
+        <project.config.repository.private.snapshot.url>http://software-repository.infrastructure.coldis.org/repository/maven-snapshots</project.config.repository.private.snapshot.url>
+        <project.config.repository.private.release.url>http://software-repository.infrastructure.coldis.org/repository/maven-releases</project.config.repository.private.release.url>
         <project.config.repository.public>coldis-public-software-repository</project.config.repository.public>
-        <project.config.repository.public.snapshot.url>
-            https://oss.sonatype.org/content/repositories/snapshots</project.config.repository.public.snapshot.url>
-        <project.config.repository.public.release.url>
-            https://oss.sonatype.org/service/local/staging/deploy/maven2</project.config.repository.public.release.url>
-        <project.config.repository.public.repository.url>
-            https://oss.sonatype.org/</project.config.repository.public.repository.url>
+        <project.config.repository.public.snapshot.url>https://oss.sonatype.org/content/repositories/snapshots</project.config.repository.public.snapshot.url>
+        <project.config.repository.public.release.url>https://oss.sonatype.org/service/local/staging/deploy/maven2</project.config.repository.public.release.url>
+        <project.config.repository.public.repository.url>https://oss.sonatype.org/</project.config.repository.public.repository.url>
         <project.config.repository.oss.phase>deploy</project.config.repository.oss.phase>
 
         <java.version>21</java.version>
