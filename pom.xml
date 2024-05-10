@@ -77,31 +77,31 @@
         <project.config.repository.oss.phase>deploy</project.config.repository.oss.phase>
 
         <java.version>21</java.version>
-        <byte-buddy.version>1.14.13</byte-buddy.version>
-        <jackson.version>2.17.0</jackson.version>
-        <slf4j.version>2.0.12</slf4j.version>
+        <byte-buddy.version>1.14.15</byte-buddy.version>
+        <jackson.version>2.17.1</jackson.version>
+        <slf4j.version>2.0.13</slf4j.version>
         <aspectj.tools.version>1.9.22</aspectj.tools.version>
         <junit-jupiter.version>5.10.2</junit-jupiter.version>
-        <spring.boot.version>3.2.4</spring.boot.version>
+        <spring.boot.version>3.2.5</spring.boot.version>
         <spring-authorization-server.version>1.2.3</spring-authorization-server.version>
         <apache.commons.version>3.14.0</apache.commons.version>
         <apache.collections.version>4.4</apache.collections.version>
-        <apache.text.version>1.11.0</apache.text.version>
-        <apache.io.version>2.16.0</apache.io.version>
+        <apache.text.version>1.12.0</apache.text.version>
+        <apache.io.version>2.16.1</apache.io.version>
         <velocity.version>2.3</velocity.version>
         <itext.version>5.5.13.2</itext.version>
         <hikaricp.version>5.1.0</hikaricp.version>
         <postgresql.version>42.7.3</postgresql.version>
-        <hibernate.version>6.4.4.Final</hibernate.version>
-        <tomcat.version>10.1.20</tomcat.version>
+        <hibernate.version>6.5.0.Final</hibernate.version>
+        <tomcat.version>10.1.23</tomcat.version>
         <artemis.version>2.33.0</artemis.version>
         <swagger-api.version>2.2.19</swagger-api.version>
         <swagger-ui.version>5.10.3</swagger-ui.version>
         <swagger-spring.version>2.3.0</swagger-spring.version>
         <sun-ws.version>4.0.2</sun-ws.version>
-        <ical4j.version>3.2.17</ical4j.version>
+        <ical4j.version>3.2.18</ical4j.version>
         <metadata-extractor.version>2.19.0</metadata-extractor.version>
-        <yauaa.version>7.26.0</yauaa.version>
+        <yauaa.version>7.26.1</yauaa.version>
 
         <maven.dependency.version>3.6.1</maven.dependency.version>
         <maven.compiler.version>3.13.0</maven.compiler.version>
