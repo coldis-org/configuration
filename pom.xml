@@ -92,7 +92,7 @@
         <itext.version>5.5.13.2</itext.version>
         <hikaricp.version>5.1.0</hikaricp.version>
         <postgresql.version>42.7.3</postgresql.version>
-        <hibernate.version>6.5.0.Final</hibernate.version>
+        <hibernate.version>6.5.2.Final</hibernate.version>
 <!--        <tomcat.version>10.1.23</tomcat.version>-->
         <tomcat.version>11.0.0-M20</tomcat.version>
         <artemis.version>2.33.0</artemis.version>
