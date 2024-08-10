@@ -234,6 +234,11 @@
 				<artifactId>fury-core</artifactId>
 				<version>${fury.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>org.apache.fury</groupId>
+				<artifactId>fury-format</artifactId>
+				<version>${fury.version}</version>
+			</dependency>
 
 			<dependency>
 				<groupId>net.bytebuddy</groupId>
