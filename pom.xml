@@ -88,7 +88,7 @@
 		<apache.collections.version>4.4</apache.collections.version>
 		<apache.text.version>1.12.0</apache.text.version>
 		<apache.io.version>2.17.0</apache.io.version>
-		<fury.version>0.7.1</fury.version>
+		<fury.version>0.8.0</fury.version>
 		<velocity.version>2.4</velocity.version>
 		<itext.version>5.5.13.2</itext.version>
 		<hikaricp.version>6.0.0</hikaricp.version>
