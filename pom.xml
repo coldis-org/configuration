@@ -1,4 +1,6 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
@@ -59,8 +61,8 @@
 		<project.config.source.test.args />
 		<project.config.source.test.re-run-failing-count>1</project.config.source.test.re-run-failing-count>
 		<project.config.source.test.skip-after-failure-count>1</project.config.source.test.skip-after-failure-count>
-		<project.config.source.test.thread-count>1</project.config.source.test.thread-count>
 		<project.config.source.test.fork-count>1</project.config.source.test.fork-count>
+		<project.config.source.test.thread-count>10</project.config.source.test.thread-count>
 		<project.config.assembly.phase>none</project.config.assembly.phase>
 		<project.config.assembly.descriptors />
 		<project.config.source.main.package.include>**/**</project.config.source.main.package.include>
@@ -694,8 +696,10 @@
 						${project.config.source.test.args}
 					</argLine>
 					<parallel>classes</parallel>
-					<rerunFailingTestsCount>${project.config.source.test.re-run-failing-count}</rerunFailingTestsCount>
-					<skipAfterFailureCount>${project.config.source.test.skip-after-failure-count}</skipAfterFailureCount>
+					<rerunFailingTestsCount>
+						${project.config.source.test.re-run-failing-count}</rerunFailingTestsCount>
+					<skipAfterFailureCount>
+						${project.config.source.test.skip-after-failure-count}</skipAfterFailureCount>
 					<threadCount>${project.config.source.test.thread-count}</threadCount>
 					<forkCount>${project.config.source.test.fork-count}</forkCount>
 				</configuration>
