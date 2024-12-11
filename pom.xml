@@ -58,7 +58,7 @@
 			-javaagent:${project.target}/spring-instrument.jar</project.config.spring.aspect.ltw.args>
 		<project.config.source.test.args />
 		<project.config.source.test.re-run-failing-count>1</project.config.source.test.re-run-failing-count>
-		<project.config.source.test.skip-after-failure-count>1</project.config.source.test.skip-after-failure-count>
+		<project.config.source.test.skip-after-failure-count>-1</project.config.source.test.skip-after-failure-count>
 		<project.config.source.test.fork-count>1</project.config.source.test.fork-count>
 		<project.config.source.test.thread-count>10</project.config.source.test.thread-count>
 		<project.config.assembly.phase>none</project.config.assembly.phase>
@@ -694,10 +694,8 @@
 						${project.config.source.test.args}
 					</argLine>
 					<parallel>classes</parallel>
-					<rerunFailingTestsCount>
-						${project.config.source.test.re-run-failing-count}</rerunFailingTestsCount>
-					<skipAfterFailureCount>
-						${project.config.source.test.skip-after-failure-count}</skipAfterFailureCount>
+					<rerunFailingTestsCount>${project.config.source.test.re-run-failing-count}</rerunFailingTestsCount>
+					<skipAfterFailureCount>${project.config.source.test.skip-after-failure-count}</skipAfterFailureCount>
 					<threadCount>${project.config.source.test.thread-count}</threadCount>
 					<forkCount>${project.config.source.test.fork-count}</forkCount>
 				</configuration>
