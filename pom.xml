@@ -4,7 +4,7 @@
 
 	<groupId>org.coldis</groupId>
 	<artifactId>configuration</artifactId>
-	<version>2.0.96-SNAPSHOT</version>
+	<version>2.0.98-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Common configuration</name>
@@ -58,7 +58,7 @@
 			-javaagent:${project.target}/spring-instrument.jar</project.config.spring.aspect.ltw.args>
 		<project.config.source.test.args />
 		<project.config.source.test.re-run-failing-count>1</project.config.source.test.re-run-failing-count>
-		<project.config.source.test.skip-after-failure-count>-1</project.config.source.test.skip-after-failure-count>
+		<project.config.source.test.skip-after-failure-count>0</project.config.source.test.skip-after-failure-count>
 		<project.config.source.test.fork-count>1</project.config.source.test.fork-count>
 		<project.config.source.test.thread-count>10</project.config.source.test.thread-count>
 		<project.config.assembly.phase>none</project.config.assembly.phase>
