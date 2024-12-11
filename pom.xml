@@ -60,7 +60,7 @@
 		<project.config.source.test.re-run-failing-count>1</project.config.source.test.re-run-failing-count>
 		<project.config.source.test.skip-after-failure-count>0</project.config.source.test.skip-after-failure-count>
 		<project.config.source.test.fork-count>1</project.config.source.test.fork-count>
-		<project.config.source.test.thread-count>1</project.config.source.test.thread-count>
+		<project.config.source.test.thread-count>10</project.config.source.test.thread-count>
 		<project.config.assembly.phase>none</project.config.assembly.phase>
 		<project.config.assembly.descriptors />
 		<project.config.source.main.package.include>**/**</project.config.source.main.package.include>
