@@ -108,10 +108,10 @@
 		<postgresql.version>42.7.4</postgresql.version>
 		<hibernate.version>6.6.1.Final</hibernate.version>
 		<tomcat.version>11.0.1</tomcat.version>
-		<artemis.version>2.38.0</artemis.version>
+		<artemis.version>2.39.0</artemis.version>
 		<swagger-api.version>2.2.19</swagger-api.version>
 		<swagger-ui.version>5.10.3</swagger-ui.version>
-		<swagger-spring.version>2.3.0</swagger-spring.version>
+		<swagger-spring.version>2.6.0</swagger-spring.version>
 		<sun-ws.version>4.0.2</sun-ws.version>
 		<ical4j.version>4.0.4</ical4j.version>
 		<metadata-extractor.version>2.19.0</metadata-extractor.version>
