@@ -56,7 +56,7 @@
 		<project.config.spring.aspect.ltw.phase>none</project.config.spring.aspect.ltw.phase>
 		<project.config.spring.aspect.ltw.args>-javaagent:${project.target}/aspectjweaver.jar
 			-javaagent:${project.target}/spring-instrument.jar</project.config.spring.aspect.ltw.args>
-		<project.config.source.test.args />
+		<project.config.source.test.args>-Xms512m -Xmx3g</project.config.source.test.args>
 		<project.config.source.test.re-run-failing-count>1</project.config.source.test.re-run-failing-count>
 		<project.config.source.test.skip-after-failure-count>0</project.config.source.test.skip-after-failure-count>
 		<project.config.source.test.fork-count>1</project.config.source.test.fork-count>
@@ -90,24 +90,24 @@
 		<project.config.repository.oss.phase>deploy</project.config.repository.oss.phase>
 
 		<java.version>21</java.version>
-		<byte-buddy.version>1.15.11</byte-buddy.version>
-		<jackson.version>2.18.2</jackson.version>
-		<slf4j.version>2.0.16</slf4j.version>
+		<byte-buddy.version>1.17.2</byte-buddy.version>
+		<jackson.version>2.18.3</jackson.version>
+		<slf4j.version>2.0.17</slf4j.version>
 		<aspectj.tools.version>1.9.22.1</aspectj.tools.version>
-		<junit-jupiter.version>5.11.4</junit-jupiter.version>
-		<spring.boot.version>3.4.1</spring.boot.version>
-		<spring-authorization-server.version>1.4.1</spring-authorization-server.version>
+		<junit-jupiter.version>5.12.0</junit-jupiter.version>
+		<spring.boot.version>3.4.3</spring.boot.version>
+		<spring-authorization-server.version>1.4.2</spring-authorization-server.version>
 		<apache.commons.version>3.17.0</apache.commons.version>
 		<apache.collections.version>4.4</apache.collections.version>
 		<apache.text.version>1.13.0</apache.text.version>
 		<apache.io.version>2.18.0</apache.io.version>
-		<fury.version>0.9.0</fury.version>
+		<fury.version>0.10.0</fury.version>
 		<velocity.version>2.4.1</velocity.version>
 		<itext.version>5.5.13.2</itext.version>
 		<hikaricp.version>6.2.1</hikaricp.version>
-		<postgresql.version>42.7.4</postgresql.version>
-		<hibernate.version>6.6.4.Final</hibernate.version>
-		<tomcat.version>11.0.2</tomcat.version>
+		<postgresql.version>42.7.5</postgresql.version>
+		<hibernate.version>6.6.9.Final</hibernate.version>
+		<tomcat.version>11.0.5</tomcat.version>
 		<artemis.version>2.39.0</artemis.version>
 		<swagger-api.version>2.2.19</swagger-api.version>
 		<swagger-ui.version>5.10.3</swagger-ui.version>
@@ -115,7 +115,7 @@
 		<sun-ws.version>4.0.2</sun-ws.version>
 		<ical4j.version>4.0.8</ical4j.version>
 		<metadata-extractor.version>2.19.0</metadata-extractor.version>
-		<yauaa.version>7.29.0</yauaa.version>
+		<yauaa.version>7.30.0</yauaa.version>
 
 		<maven.dependency.version>3.8.1</maven.dependency.version>
 		<maven.compiler.version>3.13.0</maven.compiler.version>
@@ -139,7 +139,7 @@
 		<url>https://github.com/coldis-org/configuration</url>
 		<connection>scm:git:https://github.com/coldis-org/configuration.git</connection>
 		<developerConnection>scm:git:git@github.com:coldis-org/configuration.git</developerConnection>
-		<tag>configuration-2.0.103</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<distributionManagement>
@@ -690,7 +690,6 @@
 						--add-opens java.base/java.math=ALL-UNNAMED
 						--add-opens java.base/java.time=ALL-UNNAMED
 						--add-opens java.naming/jakarta.naming=ALL-UNNAMED
-						-DFORK_NUMBER=${surefire.forkNumber}
 						${project.config.source.test.args}
 					</argLine>
 					<parallel>classes</parallel>
