@@ -91,22 +91,22 @@
 
 		<java.version>21</java.version>
 		<byte-buddy.version>1.17.5</byte-buddy.version>
-		<jackson.version>2.18.3</jackson.version>
+		<jackson.version>2.19.0</jackson.version>
 		<slf4j.version>2.0.17</slf4j.version>
-		<aspectj.tools.version>1.9.23</aspectj.tools.version>
-		<junit-jupiter.version>5.12.1</junit-jupiter.version>
-		<spring.boot.version>3.4.4</spring.boot.version>
-		<spring-authorization-server.version>1.4.2</spring-authorization-server.version>
+		<aspectj.tools.version>1.9.24</aspectj.tools.version>
+		<junit-jupiter.version>5.12.2</junit-jupiter.version>
+		<spring.boot.version>3.4.5</spring.boot.version>
+		<spring-authorization-server.version>1.4.3</spring-authorization-server.version>
 		<apache.commons.version>3.17.0</apache.commons.version>
-		<apache.collections.version>4.4</apache.collections.version>
-		<apache.text.version>1.13.0</apache.text.version>
-		<apache.io.version>2.18.0</apache.io.version>
-		<fury.version>0.10.0</fury.version>
+		<apache.collections.version>4.5.0</apache.collections.version>
+		<apache.text.version>1.13.1</apache.text.version>
+		<apache.io.version>2.19.0</apache.io.version>
+		<fury.version>0.10.1</fury.version>
 		<velocity.version>2.4.1</velocity.version>
 		<hikaricp.version>6.3.0</hikaricp.version>
 		<postgresql.version>42.7.5</postgresql.version>
-		<hibernate.version>6.6.12.Final</hibernate.version>
-		<tomcat.version>11.0.5</tomcat.version>
+		<hibernate.version>6.6.13.Final</hibernate.version>
+		<tomcat.version>11.0.6</tomcat.version>
 		<artemis.version>2.40.0</artemis.version>
 		<swagger-api.version>2.2.29</swagger-api.version>
 		<swagger-ui.version>5.10.3</swagger-ui.version>
