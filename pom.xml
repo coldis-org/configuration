@@ -101,6 +101,7 @@
 		<apache.collections.version>4.5.0</apache.collections.version>
 		<apache.text.version>1.13.1</apache.text.version>
 		<apache.io.version>2.19.0</apache.io.version>
+		<apache.math.version>3.6.1</apache.math.version>
 		<fury.version>0.10.1</fury.version>
 		<velocity.version>2.4.1</velocity.version>
 		<hikaricp.version>6.3.0</hikaricp.version>
@@ -184,6 +185,11 @@
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-text</artifactId>
 				<version>${apache.text.version}</version>
+			</dependency>
+			<dependency>
+			    <groupId>org.apache.commons</groupId>
+			    <artifactId>commons-math3</artifactId>
+			    <version>${apache.math.version}</version>
 			</dependency>
 
 			<dependency>
