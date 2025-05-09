@@ -213,7 +213,6 @@
 				<artifactId>artemis-server</artifactId>
 				<version>${artemis.version}</version>
 			</dependency>
-			</dependency>
 			<dependency>
 				<groupId>org.apache.activemq</groupId>
 				<artifactId>artemis-jakarta-client</artifactId>
