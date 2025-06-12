@@ -57,10 +57,10 @@
 		<project.config.spring.aspect.ltw.args>-javaagent:${project.target}/aspectjweaver.jar
 			-javaagent:${project.target}/spring-instrument.jar</project.config.spring.aspect.ltw.args>
 		<project.config.source.test.args>-Xms512m -Xmx3g</project.config.source.test.args>
-		<project.config.source.test.re-run-failing-count>1</project.config.source.test.re-run-failing-count>
-		<project.config.source.test.skip-after-failure-count>0</project.config.source.test.skip-after-failure-count>
 		<project.config.source.test.fork-count>1</project.config.source.test.fork-count>
 		<project.config.source.test.thread-count>10</project.config.source.test.thread-count>
+		<project.config.source.test.retry-and-fail-fast.max-attempts>1</project.config.source.test.retry-and-fail-fast.max-attempts>
+		<project.config.source.test.retry-and-fail-fast.fail-fast>false</project.config.source.test.retry-and-fail-fast.fail-fast>
 		<project.config.assembly.phase>none</project.config.assembly.phase>
 		<project.config.assembly.descriptors />
 		<project.config.source.main.package.include>**/**</project.config.source.main.package.include>
@@ -708,8 +708,6 @@
 						${project.config.source.test.args}
 					</argLine>
 					<parallel>classes</parallel>
-					<rerunFailingTestsCount>${project.config.source.test.re-run-failing-count}</rerunFailingTestsCount>
-					<skipAfterFailureCount>${project.config.source.test.skip-after-failure-count}</skipAfterFailureCount>
 					<threadCount>${project.config.source.test.thread-count}</threadCount>
 					<forkCount>${project.config.source.test.fork-count}</forkCount>
 				</configuration>
