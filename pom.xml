@@ -710,12 +710,12 @@
 					<threadCount>${project.config.source.test.thread-count}</threadCount>
 					<forkCount>${project.config.source.test.fork-count}</forkCount>
 					<environmentVariables>
-						<FORK_NUMBER>${surefire.forkNumber}</FORK_NUMBER>
-						<forkNumber>${surefire.forkNumber}</forkNumber>
+						<FORK_NUMBER>S${surefire.forkNumber}</FORK_NUMBER>
+						<forkNumber>S${surefire.forkNumber}</forkNumber>
 					</environmentVariables>
 					<systemPropertyVariables>
-						<FORK_NUMBER>${surefire.forkNumber}</FORK_NUMBER>
-						<forkNumber>${surefire.forkNumber}</forkNumber>
+						<FORK_NUMBER>S${surefire.forkNumber}</FORK_NUMBER>
+						<forkNumber>S${surefire.forkNumber}</forkNumber>
 					</systemPropertyVariables>
 				</configuration>
 			</plugin>
