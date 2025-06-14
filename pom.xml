@@ -57,7 +57,6 @@
 		<project.config.spring.aspect.ltw.args>-javaagent:${project.target}/aspectjweaver.jar
 			-javaagent:${project.target}/spring-instrument.jar</project.config.spring.aspect.ltw.args>
 		<project.config.source.test.args>-Xms512m -Xmx3g</project.config.source.test.args>
-		<surefire.forkNumber>1</surefire.forkNumber>
 		<project.config.source.test.fork-count>1</project.config.source.test.fork-count>
 		<project.config.source.test.thread-count>10</project.config.source.test.thread-count>
 		<project.config.source.test.retry-and-fail-fast.max-attempts>1</project.config.source.test.retry-and-fail-fast.max-attempts>
