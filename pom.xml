@@ -711,7 +711,12 @@
 					<forkCount>${project.config.source.test.fork-count}</forkCount>
 					<environmentVariables>
 						<FORK_NUMBER>${surefire.forkNumber}</FORK_NUMBER>
+						<forkNumber>${surefire.forkNumber}</forkNumber>
 					</environmentVariables>
+					<systemPropertyVariables>
+						<FORK_NUMBER>${surefire.forkNumber}</FORK_NUMBER>
+						<forkNumber>${surefire.forkNumber}</forkNumber>
+					</systemPropertyVariables>
 				</configuration>
 			</plugin>
 
