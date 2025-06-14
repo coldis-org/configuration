@@ -705,7 +705,6 @@
 						--add-opens java.base/java.math=ALL-UNNAMED
 						--add-opens java.base/java.time=ALL-UNNAMED
 						--add-opens java.naming/jakarta.naming=ALL-UNNAMED
-						-DFORK_NUMBER=${surefire.forkNumber}
 						${project.config.source.test.args}
 					</argLine>
 					<parallel>classes</parallel>
