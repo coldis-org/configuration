@@ -709,6 +709,9 @@
 					<parallel>classes</parallel>
 					<threadCount>${project.config.source.test.thread-count}</threadCount>
 					<forkCount>${project.config.source.test.fork-count}</forkCount>
+					<systemPropertyVariables>
+						<forkNumber>${surefire.forkNumber}</forkNumber>
+					</systemPropertyVariables>
 				</configuration>
 			</plugin>
 
