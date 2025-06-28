@@ -90,32 +90,32 @@
 		<project.config.repository.oss.phase>deploy</project.config.repository.oss.phase>
 
 		<java.version>21</java.version>
-		<byte-buddy.version>1.17.5</byte-buddy.version>
-		<jackson.version>2.19.0</jackson.version>
+		<byte-buddy.version>1.17.6</byte-buddy.version>
+		<jackson.version>2.19.1</jackson.version>
 		<slf4j.version>2.0.17</slf4j.version>
 		<aspectj.tools.version>1.9.24</aspectj.tools.version>
-		<junit-jupiter.version>5.12.2</junit-jupiter.version>
-		<spring.boot.version>3.4.4</spring.boot.version>
+		<junit-jupiter.version>5.13.2</junit-jupiter.version>
+		<spring.boot.version>3.5.3</spring.boot.version>
 		<spring-authorization-server.version>1.4.3</spring-authorization-server.version>
 		<apache.commons.version>3.17.0</apache.commons.version>
 		<apache.collections.version>4.5.0</apache.collections.version>
 		<apache.text.version>1.13.1</apache.text.version>
 		<apache.io.version>2.19.0</apache.io.version>
 		<apache.math.version>3.6.1</apache.math.version>
-		<fury.version>0.10.1</fury.version>
+		<fury.version>0.10.3</fury.version>
 		<velocity.version>2.4.1</velocity.version>
 		<hikaricp.version>6.3.0</hikaricp.version>
-		<postgresql.version>42.7.5</postgresql.version>
-		<hibernate.version>6.6.12.Final</hibernate.version>
-		<tomcat.version>11.0.6</tomcat.version>
-		<artemis.version>2.40.0</artemis.version>
+		<postgresql.version>42.7.7</postgresql.version>
+		<hibernate.version>7.0.3.Final</hibernate.version>
+		<tomcat.version>11.0.8</tomcat.version>
+		<artemis.version>2.41.0</artemis.version>
 		<swagger-api.version>2.2.29</swagger-api.version>
 		<swagger-ui.version>5.10.3</swagger-ui.version>
 		<swagger-spring.version>2.6.0</swagger-spring.version>
 		<sun-ws.version>4.0.2</sun-ws.version>
 		<ical4j.version>4.1.1</ical4j.version>
 		<metadata-extractor.version>2.19.0</metadata-extractor.version>
-		<yauaa.version>7.30.0</yauaa.version>
+		<yauaa.version>7.31.0</yauaa.version>
 
 		<maven.dependency.version>3.8.1</maven.dependency.version>
 		<maven.compiler.version>3.14.0</maven.compiler.version>
