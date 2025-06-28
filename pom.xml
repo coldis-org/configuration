@@ -719,7 +719,7 @@
 			<plugin>
 				<groupId>org.hibernate.orm.tooling</groupId>
 				<artifactId>hibernate-enhance-maven-plugin</artifactId>
-				<version>${hibernate.version}</version>
+				<version>7.0.0.Beta1</version>
 				<executions>
 					<execution>
 						<goals>
