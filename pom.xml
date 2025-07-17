@@ -60,7 +60,7 @@
 		<project.config.source.test.fork-count>1</project.config.source.test.fork-count>
 		<project.config.source.test.thread-count>10</project.config.source.test.thread-count>
 		<project.config.source.test.retry-and-fail-fast.max-attempts>1</project.config.source.test.retry-and-fail-fast.max-attempts>
-		<project.config.source.test.retry-and-fail-fast.fail-fast>false</project.config.source.test.retry-and-fail-fast.fail-fast>
+		<project.config.source.test.retry-and-fail-fast.fail-fast-enabled>false</project.config.source.test.retry-and-fail-fast.fail-fast-enabled>
 		<project.config.assembly.phase>none</project.config.assembly.phase>
 		<project.config.assembly.descriptors />
 		<project.config.source.main.package.include>**/**</project.config.source.main.package.include>
