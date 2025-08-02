@@ -739,10 +739,8 @@
 							<goal>repackage</goal>
 						</goals>
 						<configuration>
-							<mainClass>
-								${project.config.spring.boot.package.main}</mainClass>
-							<jvmArguments>
-								${project.config.spring.boot.package.args}</jvmArguments>
+							<mainClass>${project.config.spring.boot.package.main}</mainClass>
+							<jvmArguments>${project.config.spring.boot.package.args}</jvmArguments>
 							<classifier>run</classifier>
 						</configuration>
 					</execution>
@@ -782,7 +780,7 @@
 				<version>${maven.maven-central.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-					<publishingServerId>central</publishingServerId>
+					<publishingServerId>coldis-public-software-repository</publishingServerId>
 				</configuration>
 			</plugin>
 
