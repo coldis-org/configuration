@@ -4,7 +4,7 @@
 
 	<groupId>org.coldis</groupId>
 	<artifactId>configuration</artifactId>
-	<version>2.0.125-SNAPSHOT</version>
+	<version>2.0.124-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Common configuration</name>
@@ -87,6 +87,7 @@
 			https://oss.sonatype.org/service/local/staging/deploy/maven2</project.config.repository.public.release.url>
 		<project.config.repository.public.repository.url>
 			https://oss.sonatype.org/</project.config.repository.public.repository.url>
+		<project.config.repository.oss.phase>deploy</project.config.repository.oss.phase>
 
 		<java.version>21</java.version>
 		<byte-buddy.version>1.17.6</byte-buddy.version>
@@ -130,7 +131,7 @@
 		<maven.deploy.version>3.1.4</maven.deploy.version>
 		<maven.release.version>3.1.1</maven.release.version>
 		<maven.gpg.version>3.2.7</maven.gpg.version>
-		<maven.maven-central.version>0.8.0</maven.maven-central.version>
+		<maven.nexus.staging.version>1.7.0</maven.nexus.staging.version>
 
 	</properties>
 
@@ -138,7 +139,7 @@
 		<url>https://github.com/coldis-org/configuration</url>
 		<connection>scm:git:https://github.com/coldis-org/configuration.git</connection>
 		<developerConnection>scm:git:git@github.com:coldis-org/configuration.git</developerConnection>
-		<tag>HEAD</tag>
+		<tag>configuration-2.0.122</tag>
 	</scm>
 
 	<distributionManagement>
@@ -739,8 +740,10 @@
 							<goal>repackage</goal>
 						</goals>
 						<configuration>
-							<mainClass>${project.config.spring.boot.package.main}</mainClass>
-							<jvmArguments>${project.config.spring.boot.package.args}</jvmArguments>
+							<mainClass>
+								${project.config.spring.boot.package.main}</mainClass>
+							<jvmArguments>
+								${project.config.spring.boot.package.args}</jvmArguments>
 							<classifier>run</classifier>
 						</configuration>
 					</execution>
@@ -763,46 +766,36 @@
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-gpg-plugin</artifactId>
-				<version>${maven.gpg.version}</version>
-				<executions>
-					<execution>
-						<id>sign-artifacts</id>
-						<phase>${project.config.release.gpg.phase}</phase>
-						<goals>
-							<goal>sign</goal>
-						</goals>
-						<configuration>
-							<passphrase>
-								${project.config.release.gpg.passphrase}</passphrase>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-release-plugin</artifactId>
 				<version>${maven.release.version}</version>
 				<configuration>
 					<localCheckout>true</localCheckout>
 					<arguments>${project.config.release.arguments}</arguments>
 					<goals>deploy ${project.config.release.arguments}</goals>
-					<waitBeforeTagging>5</waitBeforeTagging>
+					<waitBeforeTagging>10</waitBeforeTagging>
 					<releaseProfiles>release</releaseProfiles>
 				</configuration>
 			</plugin>
 
 			<plugin>
-				<groupId>org.sonatype.central</groupId>
-				<artifactId>central-publishing-maven-plugin</artifactId>
-				<version>${maven.maven-central.version}</version>
+				<groupId>org.sonatype.plugins</groupId>
+				<artifactId>nexus-staging-maven-plugin</artifactId>
+				<version>${maven.nexus.staging.version}</version>
 				<extensions>true</extensions>
+				<executions>
+					<execution>
+						<id>default-deploy</id>
+						<phase>${project.config.repository.oss.phase}</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>
 				<configuration>
-					<publishingServerId>coldis-public-software-repository</publishingServerId>
-					<autoPublish>true</autoPublish>
-		            <waitUntil>published</waitUntil>
+					<serverId>${project.config.repository.public}</serverId>
+					<nexusUrl>${project.config.repository.public.repository.url}</nexusUrl>
+					<!--					<skipRemoteStaging>true</skipRemoteStaging>-->
+					<autoReleaseAfterClose>true</autoReleaseAfterClose>
 				</configuration>
 			</plugin>
 
@@ -890,7 +883,6 @@
 						</executions>
 					</plugin>
 
-
 					<plugin>
 						<groupId>org.codehaus.mojo</groupId>
 						<artifactId>exec-maven-plugin</artifactId>
@@ -926,4 +918,3 @@
 	</profiles>
 
 </project>
-
