@@ -87,7 +87,6 @@
 			https://oss.sonatype.org/service/local/staging/deploy/maven2</project.config.repository.public.release.url>
 		<project.config.repository.public.repository.url>
 			https://oss.sonatype.org/</project.config.repository.public.repository.url>
-		<project.config.repository.oss.phase>deploy</project.config.repository.oss.phase>
 
 		<java.version>21</java.version>
 		<byte-buddy.version>1.17.6</byte-buddy.version>
@@ -781,6 +780,8 @@
 				<extensions>true</extensions>
 				<configuration>
 					<publishingServerId>coldis-public-software-repository</publishingServerId>
+					<autoPublish>true</autoPublish>
+		            <waitUntil>published</waitUntil>
 				</configuration>
 			</plugin>
 
@@ -884,3 +885,4 @@
 	</profiles>
 
 </project>
+
