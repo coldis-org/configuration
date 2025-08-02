@@ -139,10 +139,10 @@
 		<url>https://github.com/coldis-org/configuration</url>
 		<connection>scm:git:https://github.com/coldis-org/configuration.git</connection>
 		<developerConnection>scm:git:git@github.com:coldis-org/configuration.git</developerConnection>
-		<tag>configuration-2.0.122</tag>
+		<tag>HEAD</tag>
 	</scm>
 
-	<distributionManagement>
+<!--	<distributionManagement>
 		<snapshotRepository>
 			<id>${project.config.repository.public}</id>
 			<url>${project.config.repository.public.snapshot.url}</url>
@@ -152,7 +152,7 @@
 			<url>${project.config.repository.public.release.url}</url>
 		</repository>
 	</distributionManagement>
-
+-->
 	<dependencyManagement>
 		<dependencies>
 
