@@ -740,10 +740,8 @@
 							<goal>repackage</goal>
 						</goals>
 						<configuration>
-							<mainClass>
-								${project.config.spring.boot.package.main}</mainClass>
-							<jvmArguments>
-								${project.config.spring.boot.package.args}</jvmArguments>
+							<mainClass>${project.config.spring.boot.package.main}</mainClass>
+							<jvmArguments>${project.config.spring.boot.package.args}</jvmArguments>
 							<classifier>run</classifier>
 						</configuration>
 					</execution>
@@ -778,24 +776,14 @@
 			</plugin>
 
 			<plugin>
-				<groupId>org.sonatype.plugins</groupId>
-				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>${maven.nexus.staging.version}</version>
+				<groupId>org.sonatype.central</groupId>
+				<artifactId>central-publishing-maven-plugin</artifactId>
+				<version>0.8.0</version>
 				<extensions>true</extensions>
-				<executions>
-					<execution>
-						<id>default-deploy</id>
-						<phase>${project.config.repository.oss.phase}</phase>
-						<goals>
-							<goal>deploy</goal>
-						</goals>
-					</execution>
-				</executions>
 				<configuration>
-					<serverId>${project.config.repository.public}</serverId>
-					<nexusUrl>${project.config.repository.public.repository.url}</nexusUrl>
-					<!--					<skipRemoteStaging>true</skipRemoteStaging>-->
-					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+					<publishingServerId>coldis-public-software-repository</publishingServerId>
+					<autoPublish>true</autoPublish>
+					<waitUntil>published</waitUntil>
 				</configuration>
 			</plugin>
 
