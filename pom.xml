@@ -130,8 +130,7 @@
 		<maven.surefire.version>3.5.3</maven.surefire.version>
 		<maven.deploy.version>3.1.4</maven.deploy.version>
 		<maven.release.version>3.1.1</maven.release.version>
-		<maven.gpg.version>3.2.7</maven.gpg.version>
-		<maven.nexus.staging.version>1.7.0</maven.nexus.staging.version>
+		<maven.maven-central.version>0.8.0</maven.maven-central.version>
 
 	</properties>
 
@@ -139,7 +138,7 @@
 		<url>https://github.com/coldis-org/configuration</url>
 		<connection>scm:git:https://github.com/coldis-org/configuration.git</connection>
 		<developerConnection>scm:git:git@github.com:coldis-org/configuration.git</developerConnection>
-		<tag>configuration-2.0.122</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<distributionManagement>
@@ -772,30 +771,18 @@
 					<localCheckout>true</localCheckout>
 					<arguments>${project.config.release.arguments}</arguments>
 					<goals>deploy ${project.config.release.arguments}</goals>
-					<waitBeforeTagging>10</waitBeforeTagging>
+					<waitBeforeTagging>5</waitBeforeTagging>
 					<releaseProfiles>release</releaseProfiles>
 				</configuration>
 			</plugin>
 
 			<plugin>
-				<groupId>org.sonatype.plugins</groupId>
-				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>${maven.nexus.staging.version}</version>
+				<groupId>org.sonatype.central</groupId>
+				<artifactId>central-publishing-maven-plugin</artifactId>
+				<version>${maven.maven-central.version}</version>
 				<extensions>true</extensions>
-				<executions>
-					<execution>
-						<id>default-deploy</id>
-						<phase>${project.config.repository.oss.phase}</phase>
-						<goals>
-							<goal>deploy</goal>
-						</goals>
-					</execution>
-				</executions>
 				<configuration>
-					<serverId>${project.config.repository.public}</serverId>
-					<nexusUrl>${project.config.repository.public.repository.url}</nexusUrl>
-					<!--					<skipRemoteStaging>true</skipRemoteStaging>-->
-					<autoReleaseAfterClose>true</autoReleaseAfterClose>
+					<publishingServerId>central</publishingServerId>
 				</configuration>
 			</plugin>
 
@@ -859,25 +846,6 @@
 										<sourceFileExclude>
 											${project.config.source.main.compile.exclude}</sourceFileExclude>
 									</sourceFileExcludes>
-								</configuration>
-							</execution>
-						</executions>
-					</plugin>
-
-					<plugin>
-						<groupId>org.apache.maven.plugins</groupId>
-						<artifactId>maven-gpg-plugin</artifactId>
-						<version>${maven.gpg.version}</version>
-						<executions>
-							<execution>
-								<id>sign-artifacts</id>
-								<phase>${project.config.release.gpg.phase}</phase>
-								<goals>
-									<goal>sign</goal>
-								</goals>
-								<configuration>
-									<passphrase>
-										${project.config.release.gpg.passphrase}</passphrase>
 								</configuration>
 							</execution>
 						</executions>
