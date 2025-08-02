@@ -4,7 +4,7 @@
 
 	<groupId>org.coldis</groupId>
 	<artifactId>configuration</artifactId>
-	<version>2.0.125-SNAPSHOT</version>
+	<version>2.0.124-SNAPSHOT</version>
 	<packaging>pom</packaging>
 
 	<name>Common configuration</name>
@@ -139,19 +139,19 @@
 		<url>https://github.com/coldis-org/configuration</url>
 		<connection>scm:git:https://github.com/coldis-org/configuration.git</connection>
 		<developerConnection>scm:git:git@github.com:coldis-org/configuration.git</developerConnection>
-		<tag>HEAD</tag>
+		<tag>configuration-2.0.122</tag>
 	</scm>
 
-<!--	<distributionManagement>-->
-<!--		<snapshotRepository>-->
-<!--			<id>${project.config.repository.public}</id>-->
-<!--			<url>${project.config.repository.public.snapshot.url}</url>-->
-<!--		</snapshotRepository>-->
-<!--		<repository>-->
-<!--			<id>${project.config.repository.public}</id>-->
-<!--			<url>${project.config.repository.public.release.url}</url>-->
-<!--		</repository>-->
-<!--	</distributionManagement>-->
+	<distributionManagement>
+		<snapshotRepository>
+			<id>${project.config.repository.public}</id>
+			<url>${project.config.repository.public.snapshot.url}</url>
+		</snapshotRepository>
+		<repository>
+			<id>${project.config.repository.public}</id>
+			<url>${project.config.repository.public.release.url}</url>
+		</repository>
+	</distributionManagement>
 
 	<dependencyManagement>
 		<dependencies>
@@ -772,7 +772,7 @@
 					<localCheckout>true</localCheckout>
 					<arguments>${project.config.release.arguments}</arguments>
 					<goals>deploy ${project.config.release.arguments}</goals>
-					<waitBeforeTagging>5</waitBeforeTagging>
+					<waitBeforeTagging>10</waitBeforeTagging>
 					<releaseProfiles>release</releaseProfiles>
 				</configuration>
 			</plugin>
