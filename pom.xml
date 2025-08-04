@@ -45,17 +45,14 @@
 		<project.config.infrastructure.include>*</project.config.infrastructure.include>
 		<project.config.infrastructure.build.path />
 		<project.config.infrastructure.build.phase>none</project.config.infrastructure.build.phase>
-		<project.config.infrastructure.deploy.path>
-			${project.config.infrastructure.build.path}</project.config.infrastructure.deploy.path>
+		<project.config.infrastructure.deploy.path>${project.config.infrastructure.build.path}</project.config.infrastructure.deploy.path>
 		<project.config.infrastructure.deploy.phase>none</project.config.infrastructure.deploy.phase>
-		<project.config.infrastructure.release.path>
-			${project.config.infrastructure.build.path}</project.config.infrastructure.release.path>
+		<project.config.infrastructure.release.path>${project.config.infrastructure.build.path}</project.config.infrastructure.release.path>
 		<project.config.infrastructure.release.phase>none</project.config.infrastructure.release.phase>
 		<project.config.jacoco.prepare>none</project.config.jacoco.prepare>
 		<project.config.jacoco.report>none</project.config.jacoco.report>
 		<project.config.spring.aspect.ltw.phase>none</project.config.spring.aspect.ltw.phase>
-		<project.config.spring.aspect.ltw.args>-javaagent:${project.target}/aspectjweaver.jar
-			-javaagent:${project.target}/spring-instrument.jar</project.config.spring.aspect.ltw.args>
+		<project.config.spring.aspect.ltw.args>-javaagent:${project.target}/aspectjweaver.jar -javaagent:${project.target}/spring-instrument.jar</project.config.spring.aspect.ltw.args>
 		<project.config.source.test.args>-Xms512m -Xmx3g</project.config.source.test.args>
 		<project.config.source.test.fork-count>1</project.config.source.test.fork-count>
 		<project.config.source.test.thread-count>10</project.config.source.test.thread-count>
@@ -70,18 +67,13 @@
 		<project.config.spring.boot.package.phase>none</project.config.spring.boot.package.phase>
 		<project.config.spring.boot.package.args />
 		<project.config.spring.boot.package.main />
-		<project.config.release.arguments>-DskipTests
-			-Dnet.bytebuddy.experimental=true</project.config.release.arguments>
+		<project.config.release.arguments>-DskipTests -Dnet.bytebuddy.experimental=true</project.config.release.arguments>
 		<project.config.release.gpg.passphrase />
 		<project.config.release.gpg.phase>verify</project.config.release.gpg.phase>
 
-		<project.config.repository.private>coldis-private-software-repository</project.config.repository.private>
-		<project.config.repository.private.snapshot.url>
-			http://software-repository.infrastructure.coldis.org/repository/maven-snapshots</project.config.repository.private.snapshot.url>
-		<project.config.repository.private.release.url>
-			http://software-repository.infrastructure.coldis.org/repository/maven-releases</project.config.repository.private.release.url>
-		<project.config.repository.public>coldis-public-software-repository</project.config.repository.public>
-		<project.config.repository.oss.phase>deploy</project.config.repository.oss.phase>
+		<project.config.repository>coldis-private-software-repository</project.config.repository>
+		<project.config.repository.snapshot.url>http://software-repository.infrastructure.coldis.org/repository/maven-snapshots</project.config.repository.snapshot.url>
+		<project.config.repository.release.url>http://software-repository.infrastructure.coldis.org/repository/maven-releases</project.config.repository.release.url>
 
 		<java.version>21</java.version>
 		<byte-buddy.version>1.17.6</byte-buddy.version>
@@ -133,17 +125,17 @@
 		<url>https://github.com/coldis-org/configuration</url>
 		<connection>scm:git:https://github.com/coldis-org/configuration.git</connection>
 		<developerConnection>scm:git:git@github.com:coldis-org/configuration.git</developerConnection>
-		<tag>configuration-2.0.126</tag>
+		<tag>HEAD</tag>
 	</scm>
 	
 	<distributionManagement>
 		<snapshotRepository>
-			<id>${project.config.repository.public}</id>
-			<url>${project.config.repository.public.snapshot.url}</url>
+			<id>${project.config.repository}</id>
+			<url>${project.config.repository.snapshot.url}</url>
 		</snapshotRepository>
 		<repository>
-			<id>${project.config.repository.public}</id>
-			<url>${project.config.repository.public.release.url}</url>
+			<id>${project.config.repository}</id>
+			<url>${project.config.repository.release.url}</url>
 		</repository>
 	</distributionManagement>
 
@@ -764,7 +756,7 @@
 					<localCheckout>true</localCheckout>
 					<arguments>${project.config.release.arguments}</arguments>
 					<goals>deploy ${project.config.release.arguments}</goals>
-					<waitBeforeTagging>5</waitBeforeTagging>
+					<waitBeforeTagging>10</waitBeforeTagging>
 					<releaseProfiles>release</releaseProfiles>
 				</configuration>
 			</plugin>
@@ -775,8 +767,7 @@
 				<version>0.8.0</version>
 				<extensions>true</extensions>
 				<configuration>
-					<publishingServerId>
-						${project.config.repository.public}</publishingServerId>
+					<publishingServerId>${project.config.repository.public}</publishingServerId>
 					<autoPublish>true</autoPublish>
 					<waitUntil>published</waitUntil>
 				</configuration>
@@ -835,12 +826,10 @@
 								<configuration>
 									<failOnError>false</failOnError>
 									<sourceFileIncludes>
-										<sourceFileInclude>
-											${project.config.source.main.compile.include}</sourceFileInclude>
+										<sourceFileInclude>${project.config.source.main.compile.include}</sourceFileInclude>
 									</sourceFileIncludes>
 									<sourceFileExcludes>
-										<sourceFileExclude>
-											${project.config.source.main.compile.exclude}</sourceFileExclude>
+										<sourceFileExclude>${project.config.source.main.compile.exclude}</sourceFileExclude>
 									</sourceFileExcludes>
 								</configuration>
 							</execution>
@@ -859,8 +848,7 @@
 									<goal>sign</goal>
 								</goals>
 								<configuration>
-									<passphrase>
-										${project.config.release.gpg.passphrase}</passphrase>
+									<passphrase>${project.config.release.gpg.passphrase}</passphrase>
 								</configuration>
 							</execution>
 						</executions>
@@ -884,8 +872,7 @@
 									<arguments>
 										<argument>--push</argument>
 										<argument>--base-directory</argument>
-										<argument>
-											${project.config.infrastructure.release.path}</argument>
+										<argument>${project.config.infrastructure.release.path}</argument>
 										<argument>--version</argument>
 										<argument>${project.version}</argument>
 									</arguments>
