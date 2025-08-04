@@ -766,7 +766,6 @@
 				<executions>
 					<execution>
 						<id>injected-central-publishing</id>
-						<phase>${project.config.repository.oss.phase}</phase>
 						<goals>
 							<goal>publish</goal>
 						</goals>
