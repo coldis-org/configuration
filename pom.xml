@@ -765,8 +765,7 @@
 				<extensions>true</extensions>
 				<executions>
 					<execution>
-						<id>central-publishing-maven-plugin</id>
-						<phase>${project.config.repository.oss.phase}</phase>
+						<id>injected-central-publishing</id>
 						<configuration>
 							<publishingServerId>
 								${project.config.repository.public}</publishingServerId>
