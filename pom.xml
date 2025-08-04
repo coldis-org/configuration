@@ -72,7 +72,7 @@
 		<project.config.release.gpg.passphrase />
 		<project.config.release.gpg.phase>verify</project.config.release.gpg.phase>
 
-		<project.config.repository>coldis-private-software-repository</project.config.repository>
+		<project.config.repository>central</project.config.repository>
 		<project.config.repository.snapshot.url>https://oss.sonatype.org/content/repositories/snapshots/</project.config.repository.snapshot.url>
 		<project.config.repository.release.url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</project.config.repository.release.url>
 
