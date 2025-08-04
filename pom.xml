@@ -135,6 +135,17 @@
 		<developerConnection>scm:git:git@github.com:coldis-org/configuration.git</developerConnection>
 		<tag>configuration-2.0.126</tag>
 	</scm>
+	
+	<distributionManagement>
+		<snapshotRepository>
+			<id>${project.config.repository.public}</id>
+			<url>${project.config.repository.public.snapshot.url}</url>
+		</snapshotRepository>
+		<repository>
+			<id>${project.config.repository.public}</id>
+			<url>${project.config.repository.public.release.url}</url>
+		</repository>
+	</distributionManagement>
 
 	<dependencyManagement>
 		<dependencies>
