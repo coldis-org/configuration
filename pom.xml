@@ -81,12 +81,6 @@
 		<project.config.repository.private.release.url>
 			http://software-repository.infrastructure.coldis.org/repository/maven-releases</project.config.repository.private.release.url>
 		<project.config.repository.public>coldis-public-software-repository</project.config.repository.public>
-		<project.config.repository.public.snapshot.url>
-			https://oss.sonatype.org/content/repositories/snapshots</project.config.repository.public.snapshot.url>
-		<project.config.repository.public.release.url>
-			https://oss.sonatype.org/service/local/staging/deploy/maven2</project.config.repository.public.release.url>
-		<project.config.repository.public.repository.url>
-			https://oss.sonatype.org/</project.config.repository.public.repository.url>
 		<project.config.repository.oss.phase>deploy</project.config.repository.oss.phase>
 
 		<java.version>21</java.version>
@@ -142,17 +136,6 @@
 		<tag>HEAD</tag>
 	</scm>
 
-<!--	<distributionManagement>
-		<snapshotRepository>
-			<id>${project.config.repository.public}</id>
-			<url>${project.config.repository.public.snapshot.url}</url>
-		</snapshotRepository>
-		<repository>
-			<id>${project.config.repository.public}</id>
-			<url>${project.config.repository.public.release.url}</url>
-		</repository>
-	</distributionManagement>
--->
 	<dependencyManagement>
 		<dependencies>
 
@@ -770,7 +753,7 @@
 					<localCheckout>true</localCheckout>
 					<arguments>${project.config.release.arguments}</arguments>
 					<goals>deploy ${project.config.release.arguments}</goals>
-					<waitBeforeTagging>10</waitBeforeTagging>
+					<waitBeforeTagging>5</waitBeforeTagging>
 					<releaseProfiles>release</releaseProfiles>
 				</configuration>
 			</plugin>
@@ -781,7 +764,7 @@
 				<version>0.8.0</version>
 				<extensions>true</extensions>
 				<configuration>
-					<publishingServerId>coldis-public-software-repository</publishingServerId>
+					<publishingServerId>${project.config.repository.public}</publishingServerId>
 					<autoPublish>true</autoPublish>
 					<waitUntil>published</waitUntil>
 				</configuration>
