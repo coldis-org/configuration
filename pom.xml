@@ -766,11 +766,20 @@
 				<artifactId>central-publishing-maven-plugin</artifactId>
 				<version>0.8.0</version>
 				<extensions>true</extensions>
-				<configuration>
-					<publishingServerId>${project.config.repository}</publishingServerId>
-					<autoPublish>true</autoPublish>
-					<waitUntil>published</waitUntil>
-				</configuration>
+				<executions>
+                    <execution>
+                        <id>injected-central-publishing</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>publish</goal>
+                        </goals>
+						<configuration>
+							<publishingServerId>${project.config.repository}</publishingServerId>
+							<autoPublish>true</autoPublish>
+							<waitUntil>published</waitUntil>
+						</configuration>
+					</execution>
+                </executions>
 			</plugin>
 
 		</plugins>
