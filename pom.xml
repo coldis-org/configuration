@@ -767,7 +767,7 @@
 				<version>0.8.0</version>
 				<extensions>true</extensions>
 				<configuration>
-					<publishingServerId>${project.config.repository.public}</publishingServerId>
+					<publishingServerId>${project.config.repository}</publishingServerId>
 					<autoPublish>true</autoPublish>
 					<waitUntil>published</waitUntil>
 				</configuration>
