@@ -72,8 +72,8 @@
 		<project.config.release.gpg.phase>verify</project.config.release.gpg.phase>
 
 		<project.config.repository>coldis-private-software-repository</project.config.repository>
-<!--		<project.config.repository.snapshot.url>http://software-repository.infrastructure.coldis.org/repository/maven-snapshots</project.config.repository.snapshot.url>-->
-<!--		<project.config.repository.release.url>http://software-repository.infrastructure.coldis.org/repository/maven-releases</project.config.repository.release.url>-->
+		<project.config.repository.snapshot.url></project.config.repository.snapshot.url>
+		<project.config.repository.release.url></project.config.repository.release.url>
 
 		<java.version>21</java.version>
 		<byte-buddy.version>1.17.6</byte-buddy.version>
@@ -131,11 +131,11 @@
 	<distributionManagement>
 		<snapshotRepository>
 			<id>${project.config.repository}</id>
-<!--			<url>${project.config.repository.snapshot.url}</url>-->
+			<url>${project.config.repository.snapshot.url}</url>
 		</snapshotRepository>
 		<repository>
 			<id>${project.config.repository}</id>
-<!--			<url>${project.config.repository.release.url}</url>-->
+			<url>${project.config.repository.release.url}</url>
 		</repository>
 	</distributionManagement>
 
