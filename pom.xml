@@ -694,6 +694,7 @@
 						${project.config.source.test.args}
 					</argLine>
 					<parallel>classes</parallel>
+					<groups>${test.tags}</groups>
 					<threadCount>${project.config.source.test.thread-count}</threadCount>
 					<forkCount>${project.config.source.test.fork-count}</forkCount>
 					<systemPropertyVariables>
