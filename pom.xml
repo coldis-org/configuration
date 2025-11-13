@@ -1,4 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
 
@@ -77,32 +77,33 @@
 		<project.config.repository.release.url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</project.config.repository.release.url>
 
 		<java.version>21</java.version>
-		<byte-buddy.version>1.17.7</byte-buddy.version>
-		<jackson.version>2.20.0</jackson.version>
+		<byte-buddy.version>1.18.0</byte-buddy.version>
+		<!--<jackson.version>2.20.0</jackson.version>-->
 		<slf4j.version>2.0.17</slf4j.version>
-		<aspectj.tools.version>1.9.24</aspectj.tools.version>
-		<junit-jupiter.version>5.13.4</junit-jupiter.version>
-		<spring.boot.version>3.5.5</spring.boot.version>
+		<aspectj.tools.version>1.9.25</aspectj.tools.version>
+		<junit-jupiter.version>6.0.1</junit-jupiter.version>
+	    <testcontainers.version>2.0.1</testcontainers.version>
+		<spring.boot.version>3.5.7</spring.boot.version>
 		<spring-authorization-server.version>1.4.3</spring-authorization-server.version>
-		<apache.commons.version>3.18.0</apache.commons.version>
+		<apache.commons.version>3.19.0</apache.commons.version>
 		<apache.collections.version>4.5.0</apache.collections.version>
 		<apache.text.version>1.14.0</apache.text.version>
-		<apache.io.version>2.20.0</apache.io.version>
+		<apache.io.version>2.21.0</apache.io.version>
 		<apache.math.version>3.6.1</apache.math.version>
 		<fury.version>0.10.3</fury.version>
 		<velocity.version>2.4.1</velocity.version>
 		<hikaricp.version>7.0.2</hikaricp.version>
-		<postgresql.version>42.7.7</postgresql.version>
-		<hibernate.version>7.1.1.Final</hibernate.version>
-		<tomcat.version>11.0.11</tomcat.version>
-		<artemis.version>2.42.0</artemis.version>
+		<postgresql.version>42.7.8</postgresql.version>
+		<hibernate.version>7.1.7.Final</hibernate.version>
+		<tomcat.version>11.0.14</tomcat.version>
+		<artemis.version>2.44.0</artemis.version>
 		<swagger-api.version>2.2.29</swagger-api.version>
 		<swagger-ui.version>5.10.3</swagger-ui.version>
 		<swagger-spring.version>2.6.0</swagger-spring.version>
 		<sun-ws.version>4.0.2</sun-ws.version>
-		<ical4j.version>4.1.1</ical4j.version>
+		<ical4j.version>4.2.1</ical4j.version>
 		<metadata-extractor.version>2.19.0</metadata-extractor.version>
-		<yauaa.version>7.31.0</yauaa.version>
+		<yauaa.version>7.32.0</yauaa.version>
 
 		<maven.dependency.version>3.8.1</maven.dependency.version>
 		<maven.compiler.version>3.14.0</maven.compiler.version>
