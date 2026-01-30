@@ -103,7 +103,7 @@
 		<sun-ws.version>4.0.2</sun-ws.version>
 		<ical4j.version>4.2.1</ical4j.version>
 		<metadata-extractor.version>2.19.0</metadata-extractor.version>
-		<yauaa.version>7.32.0</yauaa.version>
+		<yauaa.version>8.0.0</yauaa.version>
 
 		<maven.dependency.version>3.8.1</maven.dependency.version>
 		<maven.compiler.version>3.14.0</maven.compiler.version>
