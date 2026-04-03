@@ -117,7 +117,7 @@
 		<maven.jacoco.version>0.8.14</maven.jacoco.version>
 		<maven.surefire.version>3.5.5</maven.surefire.version>
 		<maven.deploy.version>3.1.4</maven.deploy.version>
-		<maven.release.version>3.3.1</maven.release.version>
+		<maven.release.version>3.1.1</maven.release.version>
 		<maven.gpg.version>3.2.8</maven.gpg.version>
 		<maven.nexus.staging.version>1.7.0</maven.nexus.staging.version>
 
