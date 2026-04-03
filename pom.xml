@@ -82,7 +82,7 @@
 		<slf4j.version>2.0.17</slf4j.version>
 		<aspectj.tools.version>1.9.25.1</aspectj.tools.version>
 		<junit-jupiter.version>6.0.1</junit-jupiter.version>
-	    <testcontainers.version>2.0.1</testcontainers.version>
+	    <testcontainers.version>1.12.2</testcontainers.version>
 		<spring.boot.version>3.5.13</spring.boot.version>
 		<spring-authorization-server.version>1.4.4</spring-authorization-server.version>
 		<apache.commons.version>3.20.0</apache.commons.version>
