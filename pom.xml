@@ -98,6 +98,7 @@
 		<apache.io.version>2.21.0</apache.io.version>
 		<apache.math.version>3.6.1</apache.math.version>
 		<fury.version>0.10.3</fury.version>
+		<fory.version>0.17.0</fory.version>
 		<velocity.version>2.4.1</velocity.version>
 		<hikaricp.version>7.0.2</hikaricp.version>
 		<postgresql.version>42.7.10</postgresql.version>
@@ -267,6 +268,16 @@
 				<groupId>org.apache.fury</groupId>
 				<artifactId>fury-format</artifactId>
 				<version>${fury.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.fory</groupId>
+				<artifactId>fory-core</artifactId>
+				<version>${fory.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.fory</groupId>
+				<artifactId>fory-format</artifactId>
+				<version>${fory.version}</version>
 			</dependency>
 
 			<dependency>
