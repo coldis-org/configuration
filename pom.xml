@@ -83,7 +83,7 @@
 
 		<java.version>21</java.version>
 		<byte-buddy.version>1.18.8</byte-buddy.version>
-		<jackson.version>2.20.1</jackson.version>
+		<jackson.version>2.22.3</jackson.version>
 		<slf4j.version>2.0.17</slf4j.version>
 		<aspectj.tools.version>1.9.25.1</aspectj.tools.version>
 		<junit-jupiter.version>5.12.2</junit-jupiter.version>
@@ -102,10 +102,10 @@
 		<hikaricp.version>7.0.2</hikaricp.version>
 		<postgresql.version>42.7.12</postgresql.version>
 		<hibernate.version>7.1.7.Final</hibernate.version>
-		<tomcat.version>11.0.20</tomcat.version>
-		<netty.version>4.1.136.Final</netty.version>
+		<tomcat.version>11.0.26</tomcat.version>
+		<netty.version>4.1.137.Final</netty.version>
 		<httpcore5.version>5.4.3</httpcore5.version>
-		<bouncycastle.version>1.80.2</bouncycastle.version>
+		<bouncycastle.version>1.86</bouncycastle.version>
 		<commons-beanutils.version>1.11.0</commons-beanutils.version>
 		<artemis.version>2.53.0</artemis.version>
 		<swagger-api.version>2.2.46</swagger-api.version>
