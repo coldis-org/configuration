@@ -97,7 +97,7 @@
 		<apache.io.version>2.21.0</apache.io.version>
 		<apache.math.version>3.6.1</apache.math.version>
 		<fury.version>0.10.3</fury.version>
-		<fory.version>0.17.0</fory.version>
+		<fory.version>1.7.4</fory.version>
 		<velocity.version>2.4.1</velocity.version>
 		<hikaricp.version>7.0.2</hikaricp.version>
 		<postgresql.version>42.7.12</postgresql.version>
