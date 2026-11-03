@@ -1,0 +1,31 @@
+# Review configuration for configuration (the org.coldis:configuration parent POM).
+#
+# Read by the review from THIS file on master (never from the branch under review),
+# so a branch cannot weaken its own review.
+
+[project]
+name = "configuration"
+
+# ---------------------------------------------------------------------------
+# Gates: security plus the platform gates that have files to read here. This
+# repository is a parent POM with IDE/Maven settings files; it has no
+# application code, so no service-* gate applies.
+#   - platform-config reads config/*.xml and artifact.properties. It excludes
+#     pom.xml by design, so the POM itself is read by security only.
+#   - platform-runtime reads artifact_properties.groovy.
+#   - No Dockerfile, so no platform-image; no *.sh, so no shellcheck rule
+#     (config/test is a shell script without the .sh extension); no Nomad
+#     module folder with modules.json, so no infrastructure gate.
+# ---------------------------------------------------------------------------
+
+[gates.security]
+type = "agent"
+mandatory = true          # required by contract: uncappable, no exceptions
+
+[gates.platform-runtime]
+type = "agent"
+mandatory = true          # artifact_properties.groovy
+
+[gates.platform-config]
+type = "agent"
+mandatory = true          # config/*.xml, artifact.properties
