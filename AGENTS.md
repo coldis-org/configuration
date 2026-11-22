@@ -45,6 +45,8 @@ Send Maven output to a file and read it afterwards. After a release, follow
   `-DskipTests -Dnet.bytebuddy.experimental=true -Dmaven.deploy.skip=true`; publishing goes through
   `central-publishing-maven-plugin` with `autoPublish`. The `release` profile adds sources, javadocs
   and GPG signing.
+- **Maven 3.9.0 or later:** `maven-enforcer-plugin` fails every build on an older Maven, because
+  `exec-maven-plugin` 3.7.0 and `aspectj-maven-plugin` 1.17.0 require it.
 - **`maven-release-plugin` is pinned to `3.1.1`:** `3.3.1` breaks `release:prepare` ("Project tag
   cannot be selected if version is not yet mapped").
 
